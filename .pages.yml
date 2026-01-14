@@ -55,9 +55,10 @@ content:
                 label: Role
                 type: select
                 options:
-                  - primary
-                  - secondary
-                  - other
+                  values:
+                    - primary
+                    - secondary
+                    - other
 
   # Research Faculty
   - name: research-faculty
@@ -78,8 +79,9 @@ content:
             label: University
             type: select
             options:
-              - University of Michigan
-              - Arizona State University
+              values:
+                - University of Michigan
+                - Arizona State University
           - name: researchFocus
             label: Research Focus
             type: text

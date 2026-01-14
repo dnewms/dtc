@@ -10,14 +10,13 @@ interface Props {
 	image?: string;
 }
 
-const { 
+const {
 	title,
 	description = "NSF Center for Digital Twins in Manufacturing - Advancing digital twin technologies through collaborative research and industry partnerships.",
 	image = "/social/dtc-og-default.jpg"
 } = Astro.props;
 
 const siteUrl = "https://dtc.robotics.umich.edu";
-
 ---
 
 <!DOCTYPE html>
@@ -64,24 +63,7 @@ const siteUrl = "https://dtc.robotics.umich.edu";
 						name: 'keywords',
 						content: 'digital twins, manufacturing, NSF, research center, University of Michigan, Arizona State University'
 					}
-				],
-				jsonLd: {
-					"@context": "https://schema.org",
-					"@type": "ResearchProject",
-					"name": "NSF Center for Digital Twins in Manufacturing",
-					"url": siteUrl,
-					"logo": `${siteUrl}/images/dtc-logo.png`,
-					"parentOrganization": [{
-						"@type": "CollegeOrUniversity",
-						"name": "University of Michigan College of Engineering",
-						"parentOrganization": {
-							"@type": "University",
-							"name": "University of Michigan"
-						}
-					}],
-					"description": "NSF Center for Digital Twins in Manufacturing - Advancing digital twin technologies through collaborative research and industry partnerships.",
-					"areaServed": "United States"
-				}
+				]
 			}}
 		/>
 		<link 

@@ -6,6 +6,122 @@ media:
     categories: [image]
 
 content:
+  # Homepage
+  - name: homepage
+    label: Homepage
+    type: file
+    path: src/content/site/homepage.json
+    fields:
+      - name: hero
+        label: Hero Section
+        type: object
+        fields:
+          - name: titleHighlight
+            label: Title Highlight (colored text)
+            type: string
+          - name: titleMain
+            label: Title Main
+            type: string
+          - name: subtitle
+            label: Subtitle
+            type: string
+          - name: description
+            label: Description
+            type: text
+      - name: kickoff
+        label: Kickoff Meeting Section
+        type: object
+        fields:
+          - name: sectionTitle
+            label: Section Title
+            type: string
+          - name: date
+            label: Event Date
+            type: string
+          - name: dateSubtitle
+            label: Date Subtitle
+            type: string
+          - name: description
+            label: Description
+            type: text
+          - name: buttonText
+            label: Button Text
+            type: string
+          - name: buttonUrl
+            label: Button URL
+            type: string
+      - name: timeline
+        label: Timeline Section
+        type: object
+        fields:
+          - name: title
+            label: Section Title
+            type: string
+          - name: events
+            label: Timeline Events
+            type: object
+            list: true
+            fields:
+              - name: date
+                label: Date
+                type: string
+              - name: description
+                label: Description
+                type: string
+              - name: completed
+                label: Completed
+                type: boolean
+      - name: researchThrusts
+        label: Research Thrusts Section
+        type: object
+        fields:
+          - name: sectionTitle
+            label: Section Title
+            type: string
+          - name: thrusts
+            label: Research Thrusts
+            type: object
+            list: true
+            fields:
+              - name: title
+                label: Title
+                type: string
+              - name: description
+                label: Description
+                type: text
+      - name: industryBenefits
+        label: Industry Benefits Section
+        type: object
+        fields:
+          - name: sectionTitle
+            label: Section Title
+            type: string
+          - name: paragraphs
+            label: Paragraphs
+            type: text
+            list: true
+      - name: greaterContext
+        label: Greater Context Section
+        type: object
+        fields:
+          - name: sectionTitle
+            label: Section Title
+            type: string
+          - name: paragraphs
+            label: Paragraphs
+            type: text
+            list: true
+      - name: iucrc
+        label: IUCRC Explanation Section
+        type: object
+        fields:
+          - name: sectionTitle
+            label: Section Title
+            type: string
+          - name: content
+            label: Content
+            type: text
+
   # Center Leadership
   - name: leadership
     label: Center Leadership

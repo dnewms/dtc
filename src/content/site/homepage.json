@@ -1,0 +1,83 @@
+{
+  "hero": {
+    "titleHighlight": "Digital Twin",
+    "titleMain": "Center",
+    "subtitle": "NSF Manufacturing Research Center",
+    "description": "A collaboration between the University of Michigan and Arizona State University, focused on developing digital twin solutions for manufacturing."
+  },
+  "kickoff": {
+    "sectionTitle": "Center Kick-off Meeting",
+    "date": "July 23-24, 2025",
+    "dateSubtitle": "Join us for our inaugural center meeting",
+    "description": "We're bringing together industry leaders, academic researchers, and students to launch this groundbreaking initiative in digital twin technologies for manufacturing.",
+    "buttonText": "Express Your Interest",
+    "buttonUrl": "https://docs.google.com/forms/d/1JRPqkCWbC3N1AGY6f8_7sGxzpH-oWdaJPEH5lm1vOKk/viewform?edit_requested=true"
+  },
+  "timeline": {
+    "title": "Center Timeline",
+    "events": [
+      {
+        "date": "Jan 2023",
+        "description": "Initial proposal submitted",
+        "completed": true
+      },
+      {
+        "date": "Sept 2023",
+        "description": "Planning Grant awarded",
+        "completed": true
+      },
+      {
+        "date": "June 2024",
+        "description": "Full proposal submission",
+        "completed": true
+      },
+      {
+        "date": "June 2025",
+        "description": "Anticipated NSF Award",
+        "completed": false
+      },
+      {
+        "date": "Sept 2025",
+        "description": "First research projects begin",
+        "completed": false
+      }
+    ]
+  },
+  "researchThrusts": {
+    "sectionTitle": "Research Thrusts",
+    "thrusts": [
+      {
+        "title": "Digital Twin Frameworks and Standards",
+        "description": "Creating standardized, interoperable digital twin frameworks that can be adopted across diverse manufacturing environments and industries, moving beyond siloed solutions."
+      },
+      {
+        "title": "Digital Twin Applications",
+        "description": "Developing practical applications of digital twin technology across various manufacturing sectors including automotive, aerospace, and other industrial domains."
+      },
+      {
+        "title": "Digital Twin Tools and Workforce Development",
+        "description": "Creating advanced tools for digital twin implementation while training the next generation of engineers and researchers in digital twin technologies."
+      }
+    ]
+  },
+  "industryBenefits": {
+    "sectionTitle": "Industry Benefits",
+    "paragraphs": [
+      "The potential benefits of the Center research are significant and expansive. Improvements in re-usability, extensibility, interoperability and maintainability of solutions will improve manufacturing throughput and quality and reduce cost directly. Key DT framework capabilities such as virtual commissioning will facilitate faster and lower-cost ramp-up.",
+      "A common framework will allow the benefits to extend to the entire manufacturing ecosystem and will enhance capabilities such as security and customer responsiveness. Lastly the Center will promote workforce development and empowerment by establishing environments and solutions for training, benchmarking and collaboration between competitors, suppliers, and customers in a technical, pre-competitive forum."
+    ]
+  },
+  "greaterContext": {
+    "sectionTitle": "Greater Context",
+    "paragraphs": [
+      "Digital Twins (DTs) have become pervasive in the manufacturing industry. Here we adopt the DT definition of [Moyne et al.], that a digital twin is some level of purpose-driven replica of a real thing (the physical twin) and is synchronized with its physical twin (equipment, component, process, product, etc.). Leveraging historical and real-time data, as well as data-driven and first-principles models, DTs in disparate forms have been used to solve manufacturing problems such as predictive maintenance and model-based process control.",
+      "They have the potential to increase productivity and reduce costs, by reducing unscheduled downtime, increasing yield (reducing scrap), optimizing the supply-chain manufacturing ecosystem, and even facilitating reconfiguration of assets for rapid, low-cost virtual commissioning.",
+      "DT solutions have typically been developed in silos, which creates a strain on workforce, solution upkeep and maintenance, security, sustainability. A common DT framework and approach has the potential to significantly reduce demands on workforce expertise, improve productivity through cross-training and re-use of existing solutions, streamline maintenance, and improve security and sustainability.",
+      "The Proposed Center will bring together a group of industry partners and academics for collaborative research to develop DTs across a common framework to help improve manufacturing solutions."
+    ]
+  },
+  "iucrc": {
+    "sectionTitle": "What is an IUCRC?",
+    "content": "A National Science Foundation (NSF) Industry-University Cooperative Research Center (IUCRC) is developed around emerging research topics of current research interest, in a pre-competitive space but with clear pathways to applied research and commercial development. NSF supports the administration and operation of IUCRCs. Industry partners support the research projects through their membership dues and choose the specific research projects that the center will execute."
+  }
+}

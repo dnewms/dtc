@@ -9,10 +9,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   output: 'static',
 
-  // DTC subdomain configuration
-  site: 'https://dtc.robotics.umich.edu',
-  
-  base: '/',
+  // GitHub Pages configuration
+  site: 'https://dnewms.github.io',
+  base: '/dtc',
 
   integrations: [
     icon(),
@@ -23,7 +22,7 @@ export default defineConfig({
 
   vite: {
     define: {
-      'import.meta.env.BASE_URL': '"/"',
+      'import.meta.env.BASE_URL': '"/dtc/"',
     },
 
     build: {

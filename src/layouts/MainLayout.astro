@@ -1,0 +1,113 @@
+---
+import '../styles/global.css';
+import DTCNav from "../components/DTCNav.astro"; 
+import DTCFooter from "../components/DTCFooter.astro";
+import { SEO } from 'astro-seo';
+
+interface Props {
+	title: string;
+	description?: string;
+	image?: string;
+}
+
+const { 
+	title,
+	description = "NSF Center for Digital Twins in Manufacturing - Advancing digital twin technologies through collaborative research and industry partnerships.",
+	image = "/social/dtc-og-default.jpg"
+} = Astro.props;
+
+const siteUrl = "https://dtc.robotics.umich.edu";
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<slot name="head"/>
+		<SEO
+			title={title}
+			description={description}
+			openGraph={{
+				basic: {
+					title,
+					type: "website",
+					image: `${siteUrl}${image}`,
+				},
+				optional: {
+					description,
+					siteName: "Digital Twin Center",
+					locale: "en_US",
+				},
+				image: {
+					alt: "NSF Center for Digital Twins in Manufacturing",
+					width: 1200,
+					height: 630,
+					type: "image/jpeg",
+				}
+			}}
+			twitter={{
+				card: "summary_large_image",
+				site: "@UMRobotics",
+				title,
+				description,
+				image: `${siteUrl}${image}`,
+			}}
+			extend={{
+				meta: [
+					{
+						name: 'keywords',
+						content: 'digital twins, manufacturing, NSF, research center, University of Michigan, Arizona State University'
+					}
+				],
+				jsonLd: {
+					"@context": "https://schema.org",
+					"@type": "ResearchProject",
+					"name": "NSF Center for Digital Twins in Manufacturing",
+					"url": siteUrl,
+					"logo": `${siteUrl}/images/dtc-logo.png`,
+					"parentOrganization": [{
+						"@type": "CollegeOrUniversity",
+						"name": "University of Michigan College of Engineering",
+						"parentOrganization": {
+							"@type": "University",
+							"name": "University of Michigan"
+						}
+					}],
+					"description": "NSF Center for Digital Twins in Manufacturing - Advancing digital twin technologies through collaborative research and industry partnerships.",
+					"areaServed": "United States"
+				}
+			}}
+		/>
+		<link 
+			rel="preload" 
+			href="/fonts/fonts.css" 
+			as="style" 
+			onload="this.onload=null;this.rel='stylesheet'"
+			crossorigin="anonymous"
+		>
+		<script is:inline>
+			document.documentElement.classList.add('is-loading');
+		  </script>
+		<noscript>
+			<link rel="stylesheet" href="/fonts/fonts.css">
+		</noscript>
+	</head>
+	<body class="page-bg">
+		<main class="m-auto mb-20">
+			<DTCNav></DTCNav>
+			<slot></slot>
+		</main>
+		<DTCFooter></DTCFooter>
+	</body>
+	<script is:inline>
+		window.addEventListener('load', () => {
+		  document.documentElement.classList.remove('is-loading');
+		});
+	  </script>
+</html>

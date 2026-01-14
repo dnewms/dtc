@@ -1,0 +1,181 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import DTCHero from '../components/DTCHero.astro';
+---
+
+<MainLayout title="NSF Center for Digital Twins in Manufacturing">
+  <DTCHero />
+  
+  <!-- Center Overview -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+
+    <!-- CDTM Overview Image -->
+    <div class="text-center mb-16">
+      <img src="/images/CDTM_Overview.png" alt="Center for Digital Twins in Manufacturing Overview" 
+           class="max-w-full h-auto mx-auto rounded-lg shadow-lg">
+    </div>
+
+
+  <!-- Center Timeline & Kickoff -->
+  <section class="bg-gray-50 dark:bg-gray-800 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold font-roboto-condensed mb-6">
+            Center <span class="dtc-primary">Kick-off Meeting</span>
+          </h2>
+          <div class="bg-dtc-primary text-white p-6 rounded-lg mb-6">
+            <div class="text-2xl font-bold mb-2">July 23-24, 2025</div>
+            <div class="text-lg">Join us for our inaugural center meeting</div>
+          </div>
+          <p class="text-gray-600 dark:text-gray-300 mb-6">
+            We're bringing together industry leaders, academic researchers, and students to launch this 
+            groundbreaking initiative in digital twin technologies for manufacturing.
+          </p>
+          <a href="https://docs.google.com/forms/d/1JRPqkCWbC3N1AGY6f8_7sGxzpH-oWdaJPEH5lm1vOKk/viewform?edit_requested=true" class="inline-block bg-dtc-secondary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 hover:shadow-lg transform hover:scale-105 transition-all duration-200 shadow-md">
+            Express Your Interest
+          </a>
+        </div>
+        
+        <div class="surface-dtc-accent p-8 rounded-lg">
+          <h3 class="text-2xl font-bold mb-6">Center Timeline</h3>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-4 h-4 bg-white rounded-full"></div>
+              <div>
+                <div class="font-semibold">Jan 2023</div>
+                <div class="text-sm opacity-90">Initial proposal submitted</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-4 h-4 bg-white rounded-full"></div>
+              <div>
+                <div class="font-semibold">Sept 2023</div>
+                <div class="text-sm opacity-90">Planning Grant awarded</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-4 h-4 bg-white rounded-full"></div>
+              <div>
+                <div class="font-semibold">June 2024</div>
+                <div class="text-sm opacity-90">Full proposal submission</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-4 h-4 bg-yellow-300 rounded-full"></div>
+              <div>
+                <div class="font-semibold">June 2025</div>
+                <div class="text-sm opacity-90">Anticipated NSF Award</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-4 h-4 bg-yellow-300 rounded-full"></div>
+              <div>
+                <div class="font-semibold">Sept 2025</div>
+                <div class="text-sm opacity-90">First research projects begin</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Focus Areas -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold font-roboto-condensed mb-4">
+        Research <span class="dtc-primary">Thrusts</span>
+      </h2>
+      <div class="subtitle-double-line-dtc mx-auto mb-6"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="surface p-8 rounded-lg border-l-4 border-gray-400">
+        <h3 class="text-2xl font-bold mb-4">Digital Twin Frameworks and Standards</h3>
+        <p class="text-gray-600 dark:text-gray-300">
+          Creating standardized, interoperable digital twin frameworks that can be adopted across 
+          diverse manufacturing environments and industries, moving beyond siloed solutions.
+        </p>
+      </div>
+      
+      <div class="surface p-8 rounded-lg border-l-4 border-gray-400">
+        <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-200">Digital Twin Applications</h3>
+        <p class="text-gray-600 dark:text-gray-300">
+          Developing practical applications of digital twin technology across various manufacturing 
+          sectors including automotive, aerospace, and other industrial domains.
+        </p>
+      </div>
+      
+      <div class="surface p-8 rounded-lg border-l-4 border-gray-400">
+        <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-200">Digital Twin Tools and Workforce Development</h3>
+        <p class="text-gray-600 dark:text-gray-300">
+          Creating advanced tools for digital twin implementation while training the next generation 
+          of engineers and researchers in digital twin technologies.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry Benefits -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold font-roboto-condensed mb-4">
+        Industry <span class="dtc-primary">Benefits</span>
+      </h2>
+      <div class="subtitle-double-line-dtc mx-auto mb-6"></div>
+    </div>
+    
+    <div class="surface p-8 rounded-lg">
+      <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+        The potential benefits of the Center research are significant and expansive. Improvements in re-usability, extensibility, interoperability and maintainability of solutions will improve manufacturing throughput and quality and reduce cost directly. Key DT framework capabilities such as virtual commissioning will facilitate faster and lower-cost ramp-up.
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+        A common framework will allow the benefits to extend to the entire manufacturing ecosystem and will enhance capabilities such as security and customer responsiveness. Lastly the Center will promote workforce development and empowerment by establishing environments and solutions for training, benchmarking and collaboration between competitors, suppliers, and customers in a technical, pre-competitive forum.
+      </p>
+    </div>
+  </section>
+
+  <!-- Greater Context -->
+  <section class="bg-gray-50 dark:bg-gray-800 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold font-roboto-condensed mb-4">
+          Greater <span class="dtc-primary">Context</span>
+        </h2>
+        <div class="subtitle-double-line-dtc mx-auto mb-6"></div>
+      </div>
+      
+      <div class="space-y-8">
+        <div class="surface p-8 rounded-lg">
+          <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+            Digital Twins (DTs) have become pervasive in the manufacturing industry. Here we adopt the DT definition of [Moyne et al.], that a digital twin is some level of purpose-driven replica of a real thing (the physical twin) and is synchronized with its physical twin (equipment, component, process, product, etc.). Leveraging historical and real-time data, as well as data-driven and first-principles models, DTs in disparate forms have been used to solve manufacturing problems such as predictive maintenance and model-based process control.
+          </p>
+          <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6"">
+            They have the potential to increase productivity and reduce costs, by reducing unscheduled downtime, increasing yield (reducing scrap), optimizing the supply-chain manufacturing ecosystem, and even facilitating reconfiguration of assets for rapid, low-cost virtual commissioning.
+          </p>
+        
+          <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+            DT solutions have typically been developed in silos, which creates a strain on workforce, solution upkeep and maintenance, security, sustainability. A common DT framework and approach has the potential to significantly reduce demands on workforce expertise, improve productivity through cross-training and re-use of existing solutions, streamline maintenance, and improve security and sustainability.
+          </p>
+          <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            The Proposed Center will bring together a group of industry partners and academics for collaborative research to develop DTs across a common framework to help improve manufacturing solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IUCRC Explanation -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="surface p-8 rounded-lg border border-gray-200 dark:border-gray-700">
+      <h2 class="text-3xl font-bold font-roboto-condensed mb-6 text-center text-gray-800 dark:text-gray-200">
+        What is an <span class="dtc-primary">IUCRC</span>?
+      </h2>
+      <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+        A National Science Foundation (NSF) Industry-University Cooperative Research Center (IUCRC) is developed around emerging research topics of current research interest, in a pre-competitive space but with clear pathways to applied research and commercial development. NSF supports the administration and operation of IUCRCs. Industry partners support the research projects through their membership dues and choose the specific research projects that the center will execute.
+      </p>
+    </div>
+  </section>
+
+</MainLayout>

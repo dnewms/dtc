@@ -1,0 +1,338 @@
+@import "tailwindcss";
+@config "./tailwind.config.js";
+
+@theme {
+  /* Sizes */
+  --size-0: 0px;
+  
+  /* Colors - DTC Variant (orange/teal focus) */
+  --color-maize: #ffcb05;
+  --color-umichblue: #00274c;
+  --color-dtc-orange: #575294; /* rossOrange as primary */
+  --color-dtc-teal: #D86018; /* taubmanTeal as secondary */
+  --color-dtc-blue: #2F65A7; /* arboretumBlue as accent */
+  --color-tappanRed: #9A3324;
+  --color-rossOrange: #D86018;
+  --color-rackhamGreen: #75988d;
+  --color-waveFieldGreen: #A5A508;
+  --color-taubmanTeal: #00B2A9;
+  --color-arboretumBlue: #2F65A7;
+  --color-a2Amethyst: #702082;
+  --color-matthaeiViolet: #575294;
+  --color-uMMATan: #CFC096;
+  --color-burtonTowerBeige: #9B9A6D;
+  --color-angellHallAsh: #989C97;
+  --color-lawQuadStone: #655A52;
+  --color-pumaBlack: #131516;
+  --color-umichblue-dark: #001a36;
+
+  /* DTC Brand Colors */
+  --color-dtc-primary: var(--color-dtc-orange);
+  --color-dtc-secondary: var(--color-dtc-teal);
+  --color-dtc-accent: var(--color-dtc-blue);
+
+  /* Border Colors */
+  --border-maize: var(--color-maize);
+  --border-dtc-primary: var(--color-dtc-primary);
+
+  /* Fonts */
+  --font-roboto: "Roboto", sans-serif;
+  --font-roboto-condensed: "Roboto Condensed", sans-serif;
+  --font-open-sans: "Open Sans", system-ui, sans-serif;
+  --font-sans: "Open Sans", system-ui, sans-serif;
+
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-4: 1rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+
+  /* Border Radius */
+  --radius-sm: 0.125rem;
+
+  /* Z-Index */
+  --z-100: 100;
+
+  /* Focus Styles */
+  --focus-ring-color-light: var(--color-dtc-primary);
+  --focus-ring-color-dark: #eeeeee;
+
+  /* Surface Colors - Light Mode */
+  --bg-page-light: #f3f4f6;
+  --bg-surface-light: #f8f9fa;
+  --bg-surface-hover: #e5e7eb;
+  --bg-elevated-light: #ffffff;
+  --bg-undersurface-light: #ebeef2;
+  
+  /* Surface Colors - Dark Mode */
+  --bg-page-dark: #00142c;
+  --bg-surface-dark: var(--color-umichblue);
+  --bg-surface-hover-dark: #1a3a5f;
+  --bg-elevated-dark: var(--color-dtc-blue);
+  --bg-undersurface-dark: #000e22;
+}
+
+@layer base {
+  /* Loading state styles */
+  html.is-loading *:not(.preload-visible) {
+    visibility: hidden;
+  }
+  html.is-loading .preload-visible,
+  html.is-loading * .preload-visible {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  html {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity;
+    font-display: swap;
+  }
+  
+  header {
+    min-height: 4rem;
+  }
+  
+  h1, h2, h3, .font-roboto {
+    font-display: swap;
+  }
+  
+  h1, h2, h3, .text-4xl {
+    text-wrap: balance;
+    min-height: 1.2em;
+  }
+  
+  figure {
+    @apply my-4;
+  }
+  
+  figure.aspect-video {
+    @apply mb-4;
+  }
+  
+  figure img {
+    @apply w-full rounded-sm shadow-md;
+  }
+  
+  .prose img {
+    @apply !mb-2;
+  }
+  
+  .prose-lg :where(img):not(:where([class~=not-prose],[class~=not-prose] *)), 
+  .prose-lg :where(picture):not(:where([class~=not-prose],[class~=not-prose] *)) {
+    @apply !mb-0;
+  }
+  
+  /* Global focus styles for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid var(--focus-ring-color-light);
+    outline-offset: 2px;
+  }
+  
+  /* Dark mode focus styles */
+  @media (prefers-color-scheme: dark) {
+    :focus-visible {
+      outline: 2px solid var(--focus-ring-color-dark);
+      outline-offset: 2px;
+    }
+  }
+
+  /* Global link styles - DTC orange hover */
+  a:not(.no-underline):not(nav a) {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+  
+  a:not(.no-underline):not(nav a):hover {
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-dtc-primary);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+}
+
+@layer utilities {  
+  /* Define a single page-bg class that uses CSS variables */
+  .page-bg {
+    @apply bg-[var(--bg-page-light)] text-gray-800 dark:bg-[var(--bg-page-dark)] dark:text-neutral-100;
+  }
+
+  /* DTC-specific utilities */
+  .dtc-primary {
+    @apply text-[var(--color-dtc-primary)];
+  }
+  
+  .dtc-secondary {
+    @apply text-[var(--color-dtc-secondary)];
+  }
+  
+  .dtc-accent {
+    @apply text-[var(--color-dtc-accent)];
+  }
+  
+  .bg-dtc-primary {
+    @apply bg-[var(--color-dtc-primary)];
+  }
+  
+  .bg-dtc-secondary {
+    @apply bg-[var(--color-dtc-secondary)];
+  }
+  
+  .bg-dtc-accent {
+    @apply bg-[var(--color-dtc-accent)];
+  }
+
+  /* Card Base Styles */
+  .card-base {
+    @apply rounded-sm overflow-hidden shadow-md transition-shadow duration-300;
+  }
+
+  .card-padded {
+    @apply shadow-md rounded-md p-6
+  }
+
+  .surface-border {
+    @apply dark:border dark:border-arboretumBlue/50
+  }
+
+  /* Surfaces */
+  .surface {
+    @apply bg-[var(--bg-surface-light)] dark:bg-[var(--bg-surface-dark)] text-gray-700 dark:text-neutral-100;
+  }
+
+  .elevated {
+    @apply bg-[var(--bg-elevated-light)] dark:bg-[var(--bg-elevated-dark)];
+  }
+
+  .undersurface {
+    @apply bg-[var(--bg-undersurface-light)] dark:bg-[var(--bg-undersurface-dark)];
+  }
+
+  /* DTC Surface Variants */
+  .surface-dtc-primary {
+    @apply bg-[var(--color-dtc-primary)] text-neutral-100 shadow-md;
+  }
+
+  .surface-dtc-secondary {
+    @apply bg-[var(--color-dtc-secondary)] text-neutral-100 shadow-md;
+  }
+
+  .surface-dtc-accent {
+    @apply bg-[var(--color-dtc-accent)] text-neutral-100 shadow-md;
+  }
+
+  /* Card Hover Effects */
+  .card-hover {
+    @apply hover:shadow-lg transition-shadow transition-transform duration-300 hover:scale-[1.02];
+  }
+  
+  /* Image hover animation */
+  .image-hover {
+    @apply transition-transform duration-500 group-hover:scale-105;
+  }
+  
+  /* Search bars */
+  .search-bar {
+    @apply w-full p-2 border bg-[var(--bg-page-light)] dark:bg-[var(--bg-page-dark)] border-neutral-400 dark:border-arboretumBlue rounded-md placeholder:text-neutral-500 dark:text-neutral-100 dark:placeholder:text-neutral-400
+  }
+
+  /* Section title styling */
+  .section-title {
+    @apply absolute -top-6 z-10 px-6 py-2 rounded-sm text-3xl font-bold text-neutral-50;
+  }
+  
+  /* DTC orange underline animation */
+  .dtc-underline {
+    @apply block w-0 h-0.5 bg-[var(--color-dtc-primary)] transition-all duration-300 group-hover:w-full;
+  }
+  
+  /* Flex layout for card containers */
+  .cards-container {
+    @apply flex flex-wrap gap-4 justify-center mb-8 md:flex-nowrap pt-10 px-2;
+  }
+  
+  /* DTC subtitle with double underline */
+  .subtitle-double-line-dtc {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 4px;
+  }
+  
+  .subtitle-double-line-dtc::before,
+  .subtitle-double-line-dtc::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, var(--color-dtc-primary) 0%, var(--color-dtc-primary) 25%, transparent 80%);
+  }
+  
+  .subtitle-double-line-dtc::before {
+    top: 0;
+  }
+  
+  .subtitle-double-line-dtc::after {
+    bottom: 0;
+  }
+
+  .font-roboto {
+    font-family: var(--font-roboto), var(--font-fallback-roboto);
+  }
+
+  .font-roboto-condensed {
+    font-family: var(--font-roboto-condensed), var(--font-fallback-condensed);
+  }
+
+  .font-open-sans {
+    font-family: var(--font-open-sans), var(--font-fallback-sans);
+  }
+
+  .underline-hover-only {
+    text-decoration-line: none !important;
+  }
+  
+  .underline-hover-only:hover {
+    text-decoration-line: underline !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 2px !important;
+    text-decoration-color: var(--color-dtc-primary) !important;
+  }
+  
+  /* Ensure consistent nav link hover styles */
+  nav a:not(.no-underline):hover {
+    text-decoration-line: underline !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 2px !important;
+    text-decoration-color: var(--color-dtc-primary) !important;
+  }
+}
+
+:root {
+  --font-fallback-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-fallback-condensed: Arial Narrow, Arial, sans-serif;
+  --font-fallback-roboto: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Navigation */
+nav ul li.ml-5 > div > ul > li,
+.group-hover\:block ul li {
+  margin-bottom: 0;
+}
+
+nav ul li.ml-5 > div > ul > li > ul {
+  margin-top: 0;
+  margin-left: 4px;
+}
+
+/* Footer */
+footer ul li {
+  margin-bottom: 1rem !important;
+}
+
+footer ul li:last-child {
+  margin-bottom: 0 !important;
+}

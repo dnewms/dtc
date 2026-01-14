@@ -1,0 +1,77 @@
+---
+import { Icon } from "astro-icon/components";
+
+const menuItems = [
+  { label: "Home", uri: "/" },
+  { label: "Faculty Researchers", uri: "/faculty" },
+  { label: "Resources", uri: "/resources" }
+];
+
+// Active page detection
+const currentPath = Astro.url.pathname;
+const isActive = (itemPath: string) => {
+  if (itemPath === "/" && currentPath === "/") return true;
+  if (itemPath !== "/" && currentPath.startsWith(itemPath)) return true;
+  return false;
+};
+---
+
+<header class="mt-6 max-w-6xl w-11/12 mx-auto border-b pb-4 border-umichblue dark:border-white h-16 flex justify-between items-center min-w-[200px] relative z-30">
+
+  <!-- Left Logo -->
+  <div class="ml-2 self-end md:ml-0">
+    <a href="/" class="block no-underline" aria-label="Home - Digital Twin Center">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-dtc-primary rounded-full flex items-center justify-center">
+          <span class="text-white font-bold text-sm">DTC</span>
+        </div>
+        <div>
+          <div class="font-roboto-condensed font-bold text-lg dtc-primary">Digital Twin Center</div>
+          <div class="text-xs text-gray-600 dark:text-gray-300">NSF Manufacturing Research Center</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Mobile Menu -->
+  <details class="md:hidden z-50">
+    <summary class="mt-2 text-2xl sm:text-3xl text-umichblue mr-2 dark:text-maize list-none cursor-pointer" aria-label="Toggle navigation menu">&#9776;</summary>
+    <nav class="absolute left-0 right-0 w-full top-[72px] border-b-8 border-dtc-primary border-double page-bg z-50 pb-8" aria-label="Mobile navigation">
+      <ul class="flex w-full list-none flex-col items-stretch px-4">
+        {menuItems.map((menuItem) => {
+          const isMenuItemActive = isActive(menuItem.uri);
+          return (
+            <li class="w-full">
+              <a href={menuItem.uri} 
+                 class={`pl-2 pr-4 py-3 block ${isMenuItemActive ? 'dtc-primary font-semibold' : ''}`}
+                 aria-label={menuItem.label}
+                 aria-current={isMenuItemActive ? 'page' : undefined}>
+                {menuItem.label}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  </details>
+
+  <!-- Desktop Menu -->
+  <nav class="hidden md:flex items-center space-x-8 mr-4" aria-label="Main navigation">
+    <ul class="flex items-center space-x-8 list-none">
+      {menuItems.map((menuItem) => {
+        const isMenuItemActive = isActive(menuItem.uri);
+        return (
+          <li>
+            <a href={menuItem.uri} 
+               class={`font-medium ${isMenuItemActive ? 'dtc-primary font-semibold' : 'text-gray-700 dark:text-gray-200'} hover:dtc-primary transition-colors`}
+               aria-label={menuItem.label}
+               aria-current={isMenuItemActive ? 'page' : undefined}>
+              {menuItem.label}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </nav>
+
+</header>

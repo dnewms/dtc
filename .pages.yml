@@ -65,6 +65,7 @@ content:
               - name: date
                 label: Date
                 type: string
+                required: true
               - name: description
                 label: Description
                 type: string
@@ -86,6 +87,7 @@ content:
               - name: title
                 label: Title
                 type: string
+                required: true
               - name: description
                 label: Description
                 type: text
@@ -271,11 +273,23 @@ content:
             label: Link Text
             type: string
           - name: icon
-            label: Icon Name
-            type: string
+            label: Icon
+            type: select
+            options:
+              values:
+                - clipboard
+                - chart
+                - target
+                - rocket
           - name: color
-            label: Color Class
-            type: string
+            label: Card Color
+            type: select
+            options:
+              values:
+                - dtc-primary
+                - dtc-secondary
+                - dtc-accent
+                - gray-600
 
   # Documents & Reports
   - name: documents

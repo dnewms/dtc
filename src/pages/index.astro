@@ -3,7 +3,12 @@ import MainLayout from '../layouts/MainLayout.astro';
 import DTCHero from '../components/DTCHero.astro';
 import homepage from '../content/site/homepage.json';
 
-const { kickoff, timeline, researchThrusts, industryBenefits, greaterContext, iucrc } = homepage;
+const kickoff = homepage.kickoff || {};
+const timeline = homepage.timeline || {};
+const researchThrusts = homepage.researchThrusts || {};
+const industryBenefits = homepage.industryBenefits || {};
+const greaterContext = homepage.greaterContext || {};
+const iucrc = homepage.iucrc || {};
 ---
 
 <MainLayout title="NSF Center for Digital Twins in Manufacturing">
@@ -34,7 +39,7 @@ const { kickoff, timeline, researchThrusts, industryBenefits, greaterContext, iu
           <p class="text-gray-600 dark:text-gray-300 mb-6">
             {kickoff.description}
           </p>
-          <a href={kickoff.buttonUrl} class="inline-block bg-dtc-secondary text-white px-8 py-4 rounded-lg font-bold text-xl hover:bg-opacity-90 hover:shadow-lg transform hover:scale-105 transition-all duration-200 shadow-md">
+          <a href={kickoff.buttonUrl || '#'} class="inline-block bg-dtc-secondary text-white px-8 py-4 rounded-lg font-bold text-xl hover:bg-opacity-90 hover:shadow-lg transform hover:scale-105 transition-all duration-200 shadow-md">
             {kickoff.buttonText}
           </a>
         </div>
@@ -42,7 +47,7 @@ const { kickoff, timeline, researchThrusts, industryBenefits, greaterContext, iu
         <div class="surface-dtc-accent p-8 rounded-lg">
           <h3 class="text-2xl font-bold mb-6">{timeline.title}</h3>
           <div class="space-y-4">
-            {timeline.events.map((event) => (
+            {(timeline.events || []).map((event) => (
               <div class="flex items-center gap-4">
                 <div class={`w-4 h-4 ${event.completed ? 'bg-white' : 'bg-yellow-300'} rounded-full flex-shrink-0`} aria-hidden="true"></div>
                 <div>
@@ -67,7 +72,7 @@ const { kickoff, timeline, researchThrusts, industryBenefits, greaterContext, iu
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      {researchThrusts.thrusts.map((thrust) => (
+      {(researchThrusts.thrusts || []).map((thrust) => (
         <div class="surface p-8 rounded-lg border-l-4 border-gray-400">
           <h3 class="text-2xl font-bold mb-4">{thrust.title}</h3>
           <p class="text-gray-600 dark:text-gray-300">
@@ -88,8 +93,8 @@ const { kickoff, timeline, researchThrusts, industryBenefits, greaterContext, iu
     </div>
 
     <div class="surface p-8 rounded-lg">
-      {industryBenefits.paragraphs.map((paragraph, index) => (
-        <p class={`text-lg leading-relaxed text-gray-700 dark:text-gray-300 ${index < industryBenefits.paragraphs.length - 1 ? 'mb-6' : ''}`}>
+      {(industryBenefits.paragraphs || []).map((paragraph, index, arr) => (
+        <p class={`text-lg leading-relaxed text-gray-700 dark:text-gray-300 ${index < arr.length - 1 ? 'mb-6' : ''}`}>
           {paragraph}
         </p>
       ))}
@@ -108,8 +113,8 @@ const { kickoff, timeline, researchThrusts, industryBenefits, greaterContext, iu
 
       <div class="space-y-8">
         <div class="surface p-8 rounded-lg">
-          {greaterContext.paragraphs.map((paragraph, index) => (
-            <p class={`text-lg leading-relaxed text-gray-700 dark:text-gray-300 ${index < greaterContext.paragraphs.length - 1 ? 'mb-6' : ''}`}>
+          {(greaterContext.paragraphs || []).map((paragraph, index, arr) => (
+            <p class={`text-lg leading-relaxed text-gray-700 dark:text-gray-300 ${index < arr.length - 1 ? 'mb-6' : ''}`}>
               {paragraph}
             </p>
           ))}

@@ -1,15 +1,12 @@
 {
   "hero": {
-    "titleHighlight": "Digital Twin",
-    "titleMain": "Center",
-    "subtitle": "NSF Industry-University Cooperative Research Center",
-    "description": "A collaboration between the University of Michigan and Arizona State University, focused on developing digital twin solutions for manufacturing"
+    "titleHighlight": "Center for Digital Twins in Manufacturing"
   },
   "kickoff": {
     "sectionTitle": "Center Kick-off Meeting",
-    "date": "March 25-26, 2026",
-    "dateSubtitle": "Join us for our inaugural center meeting",
-    "description": "We're bringing together industry leaders, academic researchers, and students to launch this groundbreaking initiative in digital twin technologies for manufacturing.",
+    "date": "March 25-26, 2026 (U-M(",
+    "dateSubtitle": "Join the Industry Advisory Board to attend the upcoming meeting",
+    "description": "Receive research updates and vote on new projects",
     "buttonText": "Express Your Interest",
     "buttonUrl": "https://docs.google.com/forms/d/1JRPqkCWbC3N1AGY6f8_7sGxzpH-oWdaJPEH5lm1vOKk/viewform?edit_requested=true"
   },
@@ -18,7 +15,7 @@
     "events": [
       {
         "date": "Jan 2023",
-        "description": "Initial proposal submitted",
+        "description": "Proposal for an IUCRC Planning Grant, with “letters of interest” from 20+ companies.",
         "completed": true
       },
       {
@@ -27,18 +24,53 @@
         "completed": true
       },
       {
+        "date": "Oct-Dec 2023",
+        "description": "Discussions with key potential industry partners",
+        "completed": true
+      },
+      {
+        "date": "Jan 2024",
+        "description": "Workshop with industry partners.  Collect letters of commitment, ",
+        "completed": true
+      },
+      {
         "date": "June 2024",
-        "description": "Full proposal submission",
+        "description": "Submit full proposal, including “letters of commitment” from companies",
         "completed": true
       },
       {
         "date": "June 2025",
-        "description": "Anticipated NSF Award",
-        "completed": false
+        "description": "NSF Award for the Center!",
+        "completed": true
+      },
+      {
+        "date": "July 2025",
+        "description": "Center meeting (July 23, in Michigan and on Zoom)",
+        "completed": true
       },
       {
         "date": "Sept 2025",
-        "description": "First research projects begin",
+        "description": "Bylaws approved by NSF",
+        "completed": true
+      },
+      {
+        "date": "Oct 2025",
+        "description": "Project Planning Meeting in Arizona (Oct. 9, on campus at ASU)",
+        "completed": true
+      },
+      {
+        "date": "Dec 2025",
+        "description": "Members met to select topics to discuss in January",
+        "completed": true
+      },
+      {
+        "date": "Jan 2026",
+        "description": "Begin topic explorations",
+        "completed": true
+      },
+      {
+        "date": "March 2026",
+        "description": "Center Kick-off Meeting (First IAB meeting)",
         "completed": false
       }
     ]

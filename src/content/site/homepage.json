@@ -1,6 +1,9 @@
 {
   "hero": {
-    "titleHighlight": "Center for Digital Twins in Manufacturing"
+    "titleHighlight": "Center for Digital Twins in Manufacturing",
+    "titleMain": "",
+    "subtitle": "NSF Manufacturing Research Center",
+    "description": "A collaboration between the University of Michigan and Arizona State University, focused on developing digital twin solutions for manufacturing."
   },
   "kickoff": {
     "sectionTitle": "Center Kick-off Meeting",
@@ -15,7 +18,7 @@
     "events": [
       {
         "date": "Jan 2023",
-        "description": "Proposal for an IUCRC Planning Grant, with “letters of interest” from 20+ companies.",
+        "description": "Proposal for an IUCRC Planning Grant, with 'letters of interest' from 20+ companies.",
         "completed": true
       },
       {
@@ -35,7 +38,7 @@
       },
       {
         "date": "June 2024",
-        "description": "Submit full proposal, including “letters of commitment” from companies",
+        "description": "Submit full proposal, including 'letters of commitment' from companies",
         "completed": true
       },
       {

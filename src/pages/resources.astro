@@ -35,7 +35,7 @@ function getBgColor(colorClass: string): string {
       <h1 class="text-4xl font-bold font-roboto-condensed mb-4">
         Center <span class="dtc-primary">Resources</span>
       </h1>
-      <div class="subtitle-double-line-dtc mx-auto mb-6"></div>
+      <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
       <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
         Access research publications, tools, datasets, and educational materials from the Digital Twin Center.
       </p>
@@ -45,23 +45,24 @@ function getBgColor(colorClass: string): string {
   <!-- Quick Links -->
   <section class="bg-gray-50 dark:bg-gray-800 py-16">
     <div class="max-w-6xl mx-auto px-4">
+      <h2 class="sr-only">Quick Links</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <a href="#publications" class="no-underline card-base surface-dtc-primary p-6 text-center group">
-          <div class="text-4xl mb-4">📚</div>
-          <h3 class="text-xl font-bold mb-2">Publications</h3>
-          <p class="text-sm opacity-90">Research papers and articles</p>
+        <a href="#publications" class="no-underline card-base surface p-6 text-center group border-t-4 border-dtc-primary hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4" aria-hidden="true">📚</div>
+          <span class="text-xl font-bold block mb-2">Publications</span>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Research papers and articles</p>
         </a>
 
-        <a href="#tools" class="no-underline card-base surface-dtc-secondary p-6 text-center group">
-          <div class="text-4xl mb-4">📋</div>
-          <h3 class="text-xl font-bold mb-2">Project Resources</h3>
-          <p class="text-sm opacity-90">Project summaries and materials</p>
+        <a href="#tools" class="no-underline card-base surface p-6 text-center group border-t-4 border-[var(--color-dtc-secondary)] hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4" aria-hidden="true">📋</div>
+          <span class="text-xl font-bold block mb-2">Project Resources</span>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Project summaries and materials</p>
         </a>
 
-        <a href="#documents" class="no-underline card-base surface-dtc-accent p-6 text-center group">
-          <div class="text-4xl mb-4">📄</div>
-          <h3 class="text-xl font-bold mb-2">Documents & Reports</h3>
-          <p class="text-sm opacity-90">Official documents and research reports</p>
+        <a href="#documents" class="no-underline card-base surface p-6 text-center group border-t-4 border-[var(--color-dtc-accent)] hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4" aria-hidden="true">📄</div>
+          <span class="text-xl font-bold block mb-2">Documents & Reports</span>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Official documents and research reports</p>
         </a>
 
       </div>
@@ -81,7 +82,7 @@ function getBgColor(colorClass: string): string {
           <div class="surface p-6 rounded-lg">
             <div class="flex items-center gap-4 mb-4">
               <div class={`w-12 h-12 ${getBgColor(resource.color)} rounded-lg flex items-center justify-center`}>
-                <span class="text-white font-bold">{getIcon(resource.icon)}</span>
+                <span class="text-white font-bold" aria-hidden="true">{getIcon(resource.icon)}</span>
               </div>
               <div>
                 <h3 class="text-xl font-bold">{resource.title}</h3>
@@ -92,7 +93,7 @@ function getBgColor(colorClass: string): string {
               {resource.description}
             </p>
             <div class="flex gap-4">
-              <a href={resource.url} target="_blank" class="text-dtc-primary hover:underline">{resource.linkText}</a>
+              <a href={resource.url} target="_blank" rel="noopener noreferrer" class="text-dtc-primary hover:underline">{resource.linkText}<span class="sr-only"> (opens in new tab)</span></a>
             </div>
           </div>
         ))}
@@ -143,7 +144,7 @@ function getBgColor(colorClass: string): string {
               <span class={`${tag.includes('Joint work') ? 'bg-dtc-primary' : 'bg-gray-600'} text-white px-3 py-1 rounded-full`}>{tag}</span>
             ))}
             <span class="text-gray-500">{pub.date}</span>
-            <a href={pub.url} target="_blank" class="text-dtc-primary hover:underline">View Paper</a>
+            <a href={pub.url} target="_blank" rel="noopener noreferrer" class="text-dtc-primary hover:underline">View Paper<span class="sr-only"> (opens in new tab)</span></a>
           </div>
         </div>
       ))}
@@ -153,7 +154,7 @@ function getBgColor(colorClass: string): string {
   <!-- Contact Section -->
   <section class="max-w-6xl mx-auto px-4 py-16">
     <div class="text-center surface-dtc-primary p-8 rounded-lg">
-      <h3 class="text-2xl font-bold mb-4">Need Additional Resources?</h3>
+      <h2 class="text-2xl font-bold mb-4">Need Additional Resources?</h2>
       <p class="text-lg mb-6">
         Can't find what you're looking for? Contact our team for assistance with research materials and collaborations.
       </p>

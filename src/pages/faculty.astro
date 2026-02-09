@@ -26,7 +26,7 @@ function getUniBgColor(shortName: string): string {
       <h1 class="text-4xl font-bold font-roboto-condensed mb-4">
         Faculty <span class="dtc-primary">Researchers</span>
       </h1>
-      <div class="subtitle-double-line-dtc mx-auto mb-6"></div>
+      <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
       <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
         World-class researchers from leading universities driving innovation in digital twin technologies for manufacturing.
       </p>
@@ -106,8 +106,8 @@ function getUniBgColor(shortName: string): string {
             Research focus: {person.researchFocus}
           </p>
           <div class="text-center">
-            <a href={person.website} target="_blank" class="text-dtc-primary hover:underline text-sm">
-              Website
+            <a href={person.website} target="_blank" rel="noopener noreferrer" class="text-dtc-primary hover:underline text-sm">
+              Website<span class="sr-only"> (opens in new tab)</span>
             </a>
           </div>
         </div>
@@ -116,7 +116,7 @@ function getUniBgColor(shortName: string): string {
 
     <!-- Contact Information -->
     <div class="mt-16 text-center surface-dtc-primary p-8 rounded-lg">
-      <h3 class="text-2xl font-bold mb-4">Join Our Research Community</h3>
+      <h2 class="text-2xl font-bold mb-4">Join Our Research Community</h2>
       <p class="text-lg mb-6">
         Interested in collaborating with our faculty or learning more about our research?
       </p>

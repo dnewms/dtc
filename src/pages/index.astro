@@ -17,7 +17,7 @@ const { kickoff, timeline, researchThrusts, industryBenefits, greaterContext, iu
       <img src="/dtc/images/CDTM_Overview.png" alt="Center for Digital Twins in Manufacturing Overview"
            class="max-w-full h-auto mx-auto rounded-lg shadow-lg">
     </div>
-
+  </section>
 
   <!-- Center Timeline & Kickoff -->
   <section class="bg-gray-50 dark:bg-gray-800 py-16">
@@ -34,7 +34,7 @@ const { kickoff, timeline, researchThrusts, industryBenefits, greaterContext, iu
           <p class="text-gray-600 dark:text-gray-300 mb-6">
             {kickoff.description}
           </p>
-          <a href={kickoff.buttonUrl} class="inline-block bg-dtc-secondary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 hover:shadow-lg transform hover:scale-105 transition-all duration-200 shadow-md">
+          <a href={kickoff.buttonUrl} class="inline-block bg-dtc-secondary text-white px-8 py-4 rounded-lg font-bold text-xl hover:bg-opacity-90 hover:shadow-lg transform hover:scale-105 transition-all duration-200 shadow-md">
             {kickoff.buttonText}
           </a>
         </div>
@@ -44,10 +44,10 @@ const { kickoff, timeline, researchThrusts, industryBenefits, greaterContext, iu
           <div class="space-y-4">
             {timeline.events.map((event) => (
               <div class="flex items-center gap-4">
-                <div class={`w-4 h-4 ${event.completed ? 'bg-white' : 'bg-yellow-300'} rounded-full`}></div>
+                <div class={`w-4 h-4 ${event.completed ? 'bg-white' : 'bg-yellow-300'} rounded-full flex-shrink-0`} aria-hidden="true"></div>
                 <div>
-                  <div class="font-semibold">{event.date}</div>
-                  <div class="text-sm opacity-90">{event.description}</div>
+                  <div class="font-semibold"><span class="sr-only">{event.completed ? 'Completed: ' : 'Upcoming: '}</span>{event.date}</div>
+                  <div class="text-sm">{event.description}</div>
                 </div>
               </div>
             ))}
@@ -63,7 +63,7 @@ const { kickoff, timeline, researchThrusts, industryBenefits, greaterContext, iu
       <h2 class="text-4xl font-bold font-roboto-condensed mb-4">
         Research <span class="dtc-primary">Thrusts</span>
       </h2>
-      <div class="subtitle-double-line-dtc mx-auto mb-6"></div>
+      <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -84,7 +84,7 @@ const { kickoff, timeline, researchThrusts, industryBenefits, greaterContext, iu
       <h2 class="text-4xl font-bold font-roboto-condensed mb-4">
         Industry <span class="dtc-primary">Benefits</span>
       </h2>
-      <div class="subtitle-double-line-dtc mx-auto mb-6"></div>
+      <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
     </div>
 
     <div class="surface p-8 rounded-lg">
@@ -103,7 +103,7 @@ const { kickoff, timeline, researchThrusts, industryBenefits, greaterContext, iu
         <h2 class="text-4xl font-bold font-roboto-condensed mb-4">
           Greater <span class="dtc-primary">Context</span>
         </h2>
-        <div class="subtitle-double-line-dtc mx-auto mb-6"></div>
+        <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
       </div>
 
       <div class="space-y-8">

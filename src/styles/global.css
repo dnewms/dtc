@@ -138,18 +138,17 @@
     }
   }
 
-  /* Global link styles - DTC orange hover */
+  /* Global link styles - orange underline on hover */
   a:not(.no-underline):not(nav a) {
     text-decoration-line: underline;
+    text-decoration-color: currentColor;
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
+    transition: text-decoration-color 0.2s ease;
   }
-  
+
   a:not(.no-underline):not(nav a):hover {
-    text-decoration-line: underline;
-    text-decoration-color: var(--color-dtc-primary);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 2px;
+    text-decoration-color: var(--color-dtc-secondary);
   }
 }
 
@@ -297,17 +296,17 @@
   
   .underline-hover-only:hover {
     text-decoration-line: underline !important;
-    text-decoration-thickness: 2px !important;
+    text-decoration-thickness: 1px !important;
     text-underline-offset: 2px !important;
-    text-decoration-color: var(--color-dtc-primary) !important;
+    text-decoration-color: var(--color-dtc-secondary) !important;
   }
-  
+
   /* Ensure consistent nav link hover styles */
   nav a:not(.no-underline):hover {
     text-decoration-line: underline !important;
-    text-decoration-thickness: 2px !important;
+    text-decoration-thickness: 1px !important;
     text-underline-offset: 2px !important;
-    text-decoration-color: var(--color-dtc-primary) !important;
+    text-decoration-color: var(--color-dtc-secondary) !important;
   }
 }
 

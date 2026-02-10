@@ -10,9 +10,8 @@ const menuItems = [
 // Active page detection
 const currentPath = Astro.url.pathname;
 const isActive = (itemPath: string) => {
-  if (itemPath === "/" && currentPath === "/") return true;
-  if (itemPath !== "/" && currentPath.startsWith(itemPath)) return true;
-  return false;
+  if (itemPath.endsWith("/")) return currentPath === itemPath;
+  return currentPath.startsWith(itemPath);
 };
 ---
 

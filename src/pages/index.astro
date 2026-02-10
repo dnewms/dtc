@@ -14,6 +14,12 @@ const updates = updatesData.updates;
   <!-- Updates & Center Overview -->
   <section class="max-w-6xl mx-auto px-4 py-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+      <!-- CDTM Overview Image -->
+      <div class="flex items-center justify-center">
+        <img src={`${import.meta.env.BASE_URL}images/CDTM_Overview.png`} alt="Center for Digital Twins in Manufacturing Overview"
+             class="max-w-full h-auto rounded-lg shadow-lg">
+      </div>
+
       <!-- Updates -->
       <div>
         <h2 class="text-2xl font-bold font-roboto-condensed mb-4">Latest Updates</h2>
@@ -35,12 +41,6 @@ const updates = updatesData.updates;
             </div>
           ))}
         </div>
-      </div>
-
-      <!-- CDTM Overview Image -->
-      <div class="flex items-center justify-center">
-        <img src={`${import.meta.env.BASE_URL}images/CDTM_Overview.png`} alt="Center for Digital Twins in Manufacturing Overview"
-             class="max-w-full h-auto rounded-lg shadow-lg">
       </div>
     </div>
   </section>

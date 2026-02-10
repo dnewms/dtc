@@ -1,14 +1,14 @@
 ---
-import FileCard from '../../components/FileCard.astro';
-import membershipFiles from '../../data/membershipFiles.js';
+import { Layout } from '../components/Layout.astro';
+import membershipFiles from '../data/membershipFiles.json';
 
 ---
 
-<div>
+<Layout>
   <h1>Membership Information</h1>
-  <div class="file-cards">
+  <ul>
     {membershipFiles.map(file => (
-      <FileCard file={file} />
+      <li key={file.id}>{file.name}</li>
     ))}
-  </div>
-</div>
+  </ul>
+</Layout>

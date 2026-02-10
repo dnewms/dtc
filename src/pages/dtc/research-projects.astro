@@ -9,7 +9,7 @@ import researchFiles from '../../data/researchFiles.json';
     <ul class="surface rounded-lg divide-y divide-gray-200">
       {researchFiles.map((file) => (
         <li class="px-6 py-4">
-          <a href={file.link} class="font-semibold text-dtc-primary hover:underline">{file.title}</a>
+          <a href={file.link} class="font-semibold text-dtc-orange-text hover:underline">{file.title}</a>
           <p class="text-sm text-gray-600 mt-1">{file.description}</p>
         </li>
       ))}

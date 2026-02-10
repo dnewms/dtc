@@ -11,6 +11,8 @@
   --color-dtc-orange: #D86018; /* rossOrange as primary */
   --color-dtc-teal: #00B2A9; /* taubmanTeal as secondary */
   --color-dtc-blue: #2F65A7; /* arboretumBlue as accent */
+  --color-dtc-orange-text: #B74F13; /* accessible orange for text on light bg (≥4.5:1) */
+  --color-dtc-teal-text: #007D76; /* accessible teal for text on light bg (≥4.5:1) */
   --color-tappanRed: #9A3324;
   --color-rossOrange: #D86018;
   --color-rackhamGreen: #75988d;

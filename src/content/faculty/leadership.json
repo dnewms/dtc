@@ -5,6 +5,7 @@
       "shortName": "UM",
       "location": "Ann Arbor, Michigan",
       "color": "umichblue",
+      "logo": "/dtc/images/um-logo.png",
       "leaders": [
         {
           "name": "Dr. Dawn Tilbury",
@@ -37,6 +38,7 @@
       "shortName": "ASU",
       "location": "Tempe, Arizona",
       "color": "red-700",
+      "logo": "/dtc/images/asu-logo.png",
       "leaders": [
         {
           "name": "Dr. Binil Starly",

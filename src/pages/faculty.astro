@@ -24,7 +24,7 @@ function getUniBgColor(shortName: string): string {
   <section class="max-w-6xl mx-auto px-4 py-16">
     <div class="text-center mb-12">
       <h1 class="text-4xl font-bold font-roboto-condensed mb-4">
-        Our <span class="dtc-primary">Faculty</span>
+        Our Faculty
       </h1>
       <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
       <p class="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -37,20 +37,18 @@ function getUniBgColor(shortName: string): string {
   <section class="bg-gray-50 py-16">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold font-roboto-condensed text-center mb-12">
-        Center <span class="dtc-primary">Leadership</span>
+        Center Leadership
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         {(leadership.universities || []).map((university) => (
           <div class="surface p-8 rounded-lg">
-            <div class="flex items-center gap-4 mb-6">
-              <div class={`w-16 h-16 ${getUniBgColor(university.shortName)} rounded-full flex items-center justify-center`}>
-                <span class="text-white font-bold text-lg">{university.shortName}</span>
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold dtc-primary">{university.name}</h3>
-                <p class="text-gray-600">{university.location}</p>
-              </div>
+            <div class="mb-2">
+              <img src={university.logo} alt={`${university.name} logo`} class="w-72 h-auto object-contain" />
+            </div>
+            <div class="mb-6">
+              <h3 class="text-2xl font-bold">{university.name}</h3>
+              <p class="text-gray-600">{university.location}</p>
             </div>
 
             <div class="space-y-6">
@@ -76,10 +74,10 @@ function getUniBgColor(shortName: string): string {
                       <p class="text-gray-600 mb-2">{leader.title}</p>
                     </div>
                   </div>
-                  <p class="text-sm text-gray-500 mb-2">
+                  <p class="text-sm text-gray-600 mb-2">
                     {leader.description}
                   </p>
-                  {leader.email && <a href={`mailto:${leader.email}`} class="text-dtc-primary hover:underline text-sm">
+                  {leader.email && <a href={`mailto:${leader.email}`} class="text-dtc-orange-text hover:underline text-sm">
                     {leader.email}
                   </a>}
                 </div>
@@ -94,7 +92,7 @@ function getUniBgColor(shortName: string): string {
   <!-- Research Faculty -->
   <section class="max-w-6xl mx-auto px-4 py-16">
     <h2 class="text-3xl font-bold font-roboto-condensed text-center mb-12">
-      Research <span class="dtc-primary">Faculty</span>
+      Research Faculty
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -102,11 +100,11 @@ function getUniBgColor(shortName: string): string {
         <div class="card-base surface p-6">
           <h3 class="text-xl font-bold text-center mb-2">{person.name}</h3>
           <p class="text-center text-gray-600 mb-3">{person.university}</p>
-          <p class="text-sm text-gray-500 text-center mb-4">
+          <p class="text-sm text-gray-600 text-center mb-4">
             Research focus: {person.researchFocus}
           </p>
           {person.website && <div class="text-center">
-            <a href={person.website} target="_blank" rel="noopener noreferrer" class="text-dtc-primary hover:underline text-sm">
+            <a href={person.website} target="_blank" rel="noopener noreferrer" class="text-dtc-orange-text hover:underline text-sm">
               Website<span class="sr-only"> (opens in new tab)</span>
             </a>
           </div>}

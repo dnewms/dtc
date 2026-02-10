@@ -12,7 +12,7 @@ import documentsData from '../content/resources/documents.json';
   <section class="max-w-6xl mx-auto px-4 py-16">
     <div class="text-center mb-12">
       <h1 class="text-4xl font-bold font-roboto-condensed mb-4">
-        Center <span class="dtc-primary">Resources</span>
+        Center Resources
       </h1>
       <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
       <p class="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -50,7 +50,7 @@ import documentsData from '../content/resources/documents.json';
   <section id="tools" class="py-16">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold font-roboto-condensed mb-8">
-        <span class="dtc-primary">Project</span> Resources
+        Project Resources
       </h2>
 
       <ul class="surface rounded-lg divide-y divide-gray-200">
@@ -58,10 +58,10 @@ import documentsData from '../content/resources/documents.json';
           <li class="px-6 py-4 flex items-center justify-between">
             <div>
               <span class="font-semibold">{resource.title}</span>
-              <span class="text-sm text-gray-500 ml-2">{resource.subtitle}</span>
+              <span class="text-sm text-gray-600 ml-2">{resource.subtitle}</span>
             </div>
             {resource.url && (
-              <a href={resource.url} target="_blank" rel="noopener noreferrer" class="text-dtc-primary hover:underline text-sm whitespace-nowrap ml-4">
+              <a href={resource.url} target="_blank" rel="noopener noreferrer" class="text-dtc-orange-text hover:underline text-sm whitespace-nowrap ml-4">
                 {resource.linkText || 'View'}<span class="sr-only"> (opens in new tab)</span>
               </a>
             )}
@@ -75,7 +75,7 @@ import documentsData from '../content/resources/documents.json';
   <section id="documents" class="bg-gray-50 py-16">
     <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl font-bold font-roboto-condensed mb-8">
-      <span class="dtc-primary">Documents</span> & Reports
+      Documents & Reports
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -85,7 +85,7 @@ import documentsData from '../content/resources/documents.json';
           <p class="text-gray-600 mb-4">
             {doc.description}
           </p>
-          {doc.url && <a href={doc.url} class="text-dtc-primary hover:underline">{doc.linkText || 'View'}</a>}
+          {doc.url && <a href={doc.url} class="text-dtc-orange-text hover:underline">{doc.linkText || 'View'}</a>}
         </div>
       ))}
     </div>
@@ -96,14 +96,14 @@ import documentsData from '../content/resources/documents.json';
   <!-- Publications Section -->
   <section id="publications" class="max-w-6xl mx-auto px-4 py-16">
     <h2 class="text-3xl font-bold font-roboto-condensed mb-8">
-      <span class="dtc-primary">Publications</span> & Research
+      Publications & Research
     </h2>
 
     <div class="space-y-6">
       {(publicationsData.publications || []).map((pub) => (
         <div class={`surface p-6 rounded-lg border-l-4 ${pub.featured ? 'border-dtc-primary' : 'border-gray-400'}`}>
           <h3 class="text-xl font-bold mb-2">{pub.title}</h3>
-          <p class="text-sm text-gray-500 mb-2 italic">
+          <p class="text-sm text-gray-600 mb-2 italic">
             {pub.authors}
           </p>
           <p class="text-gray-600 mb-3">
@@ -113,8 +113,8 @@ import documentsData from '../content/resources/documents.json';
             {(pub.tags || []).map((tag) => (
               <span class={`${tag.includes('Joint work') ? 'bg-dtc-primary' : 'bg-gray-600'} text-white px-3 py-1 rounded-full`}>{tag}</span>
             ))}
-            <span class="text-gray-500">{pub.date}</span>
-            {pub.url && <a href={pub.url} target="_blank" rel="noopener noreferrer" class="text-dtc-primary hover:underline">View Paper<span class="sr-only"> (opens in new tab)</span></a>}
+            <span class="text-gray-600">{pub.date}</span>
+            {pub.url && <a href={pub.url} target="_blank" rel="noopener noreferrer" class="text-dtc-orange-text hover:underline">View Paper<span class="sr-only"> (opens in new tab)</span></a>}
           </div>
         </div>
       ))}

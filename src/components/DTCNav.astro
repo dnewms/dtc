@@ -23,7 +23,7 @@ const isActive = (itemPath: string) => {
       <div class="flex items-center gap-3">
         <img src={`${import.meta.env.BASE_URL}images/dtc-logo.png`} alt="DTC Logo" class="w-14 h-auto object-contain" />
         <div>
-          <div class="font-roboto-condensed font-bold text-lg dtc-primary">Center for Digital Twins in Manufacturing</div>
+          <div class="font-roboto-condensed font-bold text-lg text-umichblue">Center for Digital Twins in Manufacturing</div>
           <div class="text-xs text-gray-600">IUCRC</div>
         </div>
       </div>
@@ -40,7 +40,7 @@ const isActive = (itemPath: string) => {
           return (
             <li class="w-full">
               <a href={menuItem.uri}
-                 class={`pl-2 pr-4 py-3 block ${isMenuItemActive ? 'dtc-primary font-semibold' : ''}`}
+                 class={`pl-2 pr-4 py-3 block ${isMenuItemActive ? 'text-dtc-orange-text font-semibold' : ''}`}
                  aria-label={menuItem.label}
                  aria-current={isMenuItemActive ? 'page' : undefined}>
                 {menuItem.label}
@@ -60,7 +60,7 @@ const isActive = (itemPath: string) => {
         return (
           <li>
             <a href={menuItem.uri}
-               class={`font-medium ${isMenuItemActive ? 'dtc-primary font-semibold' : 'text-gray-700'} hover:dtc-primary transition-colors`}
+               class={`font-medium ${isMenuItemActive ? 'text-dtc-orange-text font-semibold' : 'text-gray-700'} hover:text-dtc-orange-text transition-colors`}
                aria-label={menuItem.label}
                aria-current={isMenuItemActive ? 'page' : undefined}>
               {menuItem.label}

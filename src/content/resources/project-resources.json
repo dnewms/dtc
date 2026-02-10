@@ -10,31 +10,22 @@
       "color": "dtc-primary"
     },
     {
-      "title": "IUCRC Details",
-      "subtitle": "Center information",
-      "description": "Detailed information about the Industry-University Cooperative Research Center structure and operations.",
-      "url": "#",
-      "linkText": "Download PDF",
-      "icon": "chart",
+      "title": "Membership Agreement",
+      "subtitle": "Membership document",
+      "description": "Membership agreement for the Center for Digital Twins in Manufacturing.",
+      "url": "https://drive.google.com/file/d/1s6IC_JcsA879NzBtN0KnMEPYWPAVhc81/view",
+      "linkText": "View Document",
+      "icon": "clipboard",
       "color": "dtc-secondary"
     },
     {
       "title": "Digital Twin Framework Keynote",
       "subtitle": "Presentation materials",
       "description": "Keynote presentation covering the digital twin framework development and implementation strategies.",
-      "url": "#",
+      "url": "https://drive.google.com/file/d/1guNM24gGLLP6VcsoprbHA440UWx8Jnwe/view",
       "linkText": "Download Slides",
       "icon": "target",
       "color": "dtc-accent"
-    },
-    {
-      "title": "DT-IUCRC Proposal Kickoff",
-      "subtitle": "Project launch materials",
-      "description": "Initial proposal and kickoff materials for the Digital Twin Industry-University Cooperative Research Center.",
-      "url": "#",
-      "linkText": "View Proposal",
-      "icon": "rocket",
-      "color": "gray-600"
     }
   ]
 }

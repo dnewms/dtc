@@ -1,5 +1,4 @@
 ---
-// DTC Hero component
 import homepage from '../content/site/homepage.json';
 const hero = {
   titleHighlight: '',
@@ -8,47 +7,93 @@ const hero = {
   description: '',
   ...homepage.hero,
 };
+const kickoff = homepage.kickoff;
 ---
 
-<section class="my-4 relative">
-  <div class="relative min-h-[400px]">
-    <div class="flex flex-wrap items-center justify-center min-h-[400px] mb-6 md:mb-12">
-      <div class="text-center z-10 p-8">
-        <h1 class="text-4xl md:text-6xl text-white font-roboto-condensed font-bold mb-4">
-          <span class="text-yellow-300">{hero.titleHighlight}</span>{hero.titleMain ? ` ${hero.titleMain}` : ''}<br>
-          {hero.subtitle}
-        </h1>
-        {hero.description && (
-          <p class="text-xl md:text-2xl text-gray-200 font-light">
-            {hero.description}
-          </p>
-        )}
+<section class="relative overflow-hidden" aria-labelledby="hero-heading">
+  <div class="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center">
+
+    <!-- Background layers -->
+    <div class="absolute inset-0" aria-hidden="true">
+      <!-- Base gradient -->
+      <div class="absolute inset-0 bg-gradient-to-br from-umichblue from-20% via-dtc-accent via-60% to-[#1a3a5f]"></div>
+
+      <!-- Network pattern overlay -->
+      <div class="absolute inset-0 opacity-20">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+          <defs>
+            <pattern id="dtcNetwork" width="120" height="120" patternUnits="userSpaceOnUse">
+              <!-- Grid lines -->
+              <line x1="0" y1="60" x2="120" y2="60" stroke="#ffffff" stroke-opacity="0.08" stroke-width="0.5"/>
+              <line x1="60" y1="0" x2="60" y2="120" stroke="#ffffff" stroke-opacity="0.08" stroke-width="0.5"/>
+
+              <!-- Diagonal connectors -->
+              <line x1="0" y1="0" x2="60" y2="60" stroke="#ffffff" stroke-opacity="0.15" stroke-width="0.5"/>
+              <line x1="120" y1="0" x2="60" y2="60" stroke="#ffffff" stroke-opacity="0.15" stroke-width="0.5"/>
+              <line x1="60" y1="60" x2="0" y2="120" stroke="#ffffff" stroke-opacity="0.1" stroke-width="0.5"/>
+              <line x1="60" y1="60" x2="120" y2="120" stroke="#ffffff" stroke-opacity="0.1" stroke-width="0.5"/>
+
+              <!-- Primary node (center) -->
+              <circle cx="60" cy="60" r="3" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1"/>
+              <circle cx="60" cy="60" r="1.5" fill="#ffffff" fill-opacity="0.2"/>
+
+              <!-- Corner nodes -->
+              <circle cx="0" cy="0" r="2" fill="none" stroke="#ffffff" stroke-opacity="0.15" stroke-width="0.5"/>
+              <circle cx="0" cy="0" r="1" fill="#ffffff" fill-opacity="0.12"/>
+              <circle cx="120" cy="0" r="2" fill="none" stroke="#ffffff" stroke-opacity="0.15" stroke-width="0.5"/>
+              <circle cx="120" cy="0" r="1" fill="#ffffff" fill-opacity="0.12"/>
+              <circle cx="0" cy="120" r="2" fill="none" stroke="#ffffff" stroke-opacity="0.15" stroke-width="0.5"/>
+              <circle cx="0" cy="120" r="1" fill="#ffffff" fill-opacity="0.12"/>
+              <circle cx="120" cy="120" r="2" fill="none" stroke="#ffffff" stroke-opacity="0.15" stroke-width="0.5"/>
+              <circle cx="120" cy="120" r="1" fill="#ffffff" fill-opacity="0.12"/>
+
+              <!-- Mid-edge nodes -->
+              <rect x="58" y="0" width="4" height="4" rx="0.5" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="0.5" transform="rotate(45, 60, 2)"/>
+              <rect x="0" y="58" width="4" height="4" rx="0.5" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="0.5" transform="rotate(45, 2, 60)"/>
+
+              <!-- Data flow dots -->
+              <circle cx="30" cy="30" r="0.8" fill="#ffffff" fill-opacity="0.18"/>
+              <circle cx="90" cy="30" r="0.8" fill="#ffffff" fill-opacity="0.18"/>
+              <circle cx="30" cy="90" r="0.8" fill="#ffffff" fill-opacity="0.14"/>
+              <circle cx="90" cy="90" r="0.8" fill="#ffffff" fill-opacity="0.14"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dtcNetwork)"/>
+        </svg>
       </div>
 
-      <!-- Background with gradient overlay -->
-      <div class="absolute inset-0 w-full h-full">
-        <!-- DTC-themed gradient background -->
-        <div class="absolute inset-0 bg-gradient-to-br from-umichblue via-dtc-accent to-dtc-primary"></div>
-        
-        <!-- Pattern overlay for texture (inline SVG tile) -->
-        <div class="absolute inset-0 opacity-10" aria-hidden="true">
-          <svg width="100%" height="100%" viewBox="0 0 60 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;">
-            <defs>
-              <pattern id="dtcDot" width="60" height="60" patternUnits="userSpaceOnUse">
-                <g fill="none" fill-rule="evenodd">
-                  <circle cx="30" cy="30" r="2" fill="#ffffff" fill-opacity="0.3"/>
-                  <circle cx="10" cy="10" r="1" fill="#ffffff" fill-opacity="0.3"/>
-                  <circle cx="50" cy="10" r="1" fill="#ffffff" fill-opacity="0.3"/>
-                  <circle cx="10" cy="50" r="1" fill="#ffffff" fill-opacity="0.3"/>
-                  <circle cx="50" cy="50" r="1" fill="#ffffff" fill-opacity="0.3"/>
-                </g>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#dtcDot)"/>
+      <!-- Vignette overlay for depth -->
+      <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, transparent 30%, rgba(0,39,76,0.5) 100%)"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-16 max-w-4xl mx-auto">
+      <h1 id="hero-heading" class="text-4xl sm:text-5xl md:text-6xl text-white font-roboto-condensed font-bold mb-6 hero-animate">
+        <span class="text-maize">{hero.titleHighlight}</span>{hero.titleMain ? ` ${hero.titleMain}` : ''}<br />
+        {hero.subtitle}
+      </h1>
+
+      {hero.description && (
+        <p class="text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto mb-10 hero-animate" style="animation-delay: 0.1s">
+          {hero.description}
+        </p>
+      )}
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 hero-animate" style="animation-delay: 0.2s">
+        <a href={kickoff.buttonUrl || '#'}
+           class="no-underline inline-flex items-center gap-2 bg-dtc-primary text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+           style="background-color: #D86018;">
+          Express Your Interest
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
           </svg>
-        </div>
+        </a>
+        <a href="#kickoff"
+           class="no-underline text-gray-200 hover:text-white font-medium transition-colors border border-white/30 px-6 py-3 rounded-lg hover:border-white/60">
+          View Upcoming Meeting
+        </a>
       </div>
     </div>
   </div>
-
 </section>

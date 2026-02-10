@@ -6,156 +6,337 @@ import updatesData from '../content/updates/updates.json';
 
 const { kickoff, timeline, researchThrusts, industryBenefits, greaterContext, iucrc } = homepage;
 const updates = updatesData.updates;
+
+const thrustColors = [
+  { border: 'border-[#D86018]', iconBg: 'bg-[#D86018]/10', iconText: 'text-[#D86018]' },
+  { border: 'border-[#00B2A9]', iconBg: 'bg-[#00B2A9]/10', iconText: 'text-[#00B2A9]' },
+  { border: 'border-[#2F65A7]', iconBg: 'bg-[#2F65A7]/10', iconText: 'text-[#2F65A7]' },
+];
 ---
 
 <MainLayout title="NSF Center for Digital Twins in Manufacturing">
   <DTCHero />
 
   <!-- Updates & Center Overview -->
-  <section class="max-w-6xl mx-auto px-4 py-10">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-      <!-- CDTM Overview Image -->
-      <div class="flex items-center justify-center">
-        <img src={`${import.meta.env.BASE_URL}images/CDTM_Overview.png`} alt="Center for Digital Twins in Manufacturing Overview"
-             class="max-w-full h-auto rounded-lg shadow-lg">
-      </div>
+  <section class="max-w-6xl mx-auto px-4 py-16 sm:py-20" aria-labelledby="updates-heading">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
 
-      <!-- Updates -->
-      <div>
-        <h2 class="text-2xl font-bold font-roboto-condensed mb-4">Latest Updates</h2>
-        <div class="divide-y divide-gray-200 dark:divide-gray-700 surface rounded-lg">
+      <!-- Updates (3/5 width on desktop) -->
+      <div class="lg:col-span-3">
+        <h2 id="updates-heading" class="text-3xl font-bold font-roboto-condensed mb-2">
+          Latest <span class="dtc-primary">Updates</span>
+        </h2>
+        <div class="subtitle-double-line-dtc mb-8" aria-hidden="true" style="max-width: 300px"></div>
+
+        <div class="space-y-4">
           {updates.map((update) => (
-            <div class="px-5 py-3">
-              <span class={`text-xs font-semibold uppercase px-2 py-0.5 rounded ${update.type === 'center' ? 'bg-dtc-primary text-white' : 'bg-dtc-secondary text-white'}`}>
+            <div class={`surface rounded-lg p-5 border-l-4 transition-shadow hover:shadow-md ${update.type === 'center' ? 'border-[#D86018]' : 'border-[#00B2A9]'}`}>
+              <span class={`inline-block text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2 ${
+                update.type === 'center'
+                  ? 'bg-[#D86018]/10 text-[#D86018]'
+                  : 'bg-[#00B2A9]/10 text-[#00B2A9]'
+              }`}>
+                <span class="sr-only">Type: </span>
                 {update.type === 'center' ? 'Center Update' : 'News Mention'}
               </span>
-              <div class="mt-1">
+              <div>
                 {update.link ? (
-                  <a href={update.link} class="text-sm text-gray-800 dark:text-gray-200 hover:dtc-primary transition-colors">
-                    {update.heading}
+                  <a href={update.link}
+                     class="text-base font-medium text-gray-800 hover:text-[#D86018] transition-colors inline-flex items-start gap-1.5">
+                    <span>{update.heading}</span>
+                    <svg class="w-4 h-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                    <span class="sr-only"> (opens in new tab)</span>
                   </a>
                 ) : (
-                  <span class="text-sm text-gray-800 dark:text-gray-200">{update.heading}</span>
+                  <span class="text-base font-medium text-gray-800">{update.heading}</span>
                 )}
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <!-- CDTM Overview Image (2/5 width on desktop) -->
+      <div class="lg:col-span-2">
+        <figure>
+          <img src={`${import.meta.env.BASE_URL}images/CDTM_Overview.png`}
+               alt="Center for Digital Twins in Manufacturing Overview diagram showing the relationship between physical twins, digital models, and data synchronization"
+               class="w-full h-auto rounded-lg shadow-lg ring-1 ring-gray-200">
+          <figcaption class="mt-3 text-sm text-gray-500 text-center">
+            Center for Digital Twins in Manufacturing Overview
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
   <!-- Center Kick-off -->
-  <section class="bg-gray-50 dark:bg-gray-800 py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold font-roboto-condensed mb-6">
-          Center <span class="dtc-primary">Kick-off Meeting</span>
-        </h2>
-        <div class="bg-dtc-primary text-white p-6 rounded-lg mb-6">
-          <div class="text-2xl font-bold mb-2">{kickoff.date}</div>
-          <div class="text-lg">{kickoff.dateSubtitle}</div>
+  <section id="kickoff" class="py-16 sm:py-20 bg-gray-50" aria-labelledby="kickoff-heading">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="rounded-2xl overflow-hidden shadow-xl">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+
+          <!-- Left: Event Info -->
+          <div class="bg-umichblue p-8 sm:p-10 text-white flex flex-col justify-center">
+            <h2 id="kickoff-heading" class="text-3xl font-bold font-roboto-condensed mb-6">
+              Center Kick-off Meeting
+            </h2>
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style="background-color: #D86018;" aria-hidden="true">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-xl font-bold">{kickoff.date}</div>
+                <div class="text-sm text-gray-300">{kickoff.dateSubtitle}</div>
+              </div>
+            </div>
+            <p class="text-gray-300 text-base">
+              {kickoff.description}
+            </p>
+          </div>
+
+          <!-- Right: CTA -->
+          <div class="bg-white p-8 sm:p-10 flex flex-col items-center justify-center text-center">
+            <p class="text-lg text-gray-600 mb-6 font-medium">
+              Join the Industry Advisory Board to shape the future of digital twin research.
+            </p>
+            <a href={kickoff.buttonUrl || '#'}
+               class="no-underline inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg font-bold text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 shadow-lg"
+               style="background-color: #D86018;">
+              {kickoff.buttonText}
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="mailto:cdtm-iucrc@umich.edu" class="mt-4 text-sm text-gray-500 hover:text-[#D86018] transition-colors">
+              Or email us with questions
+            </a>
+          </div>
+
         </div>
-        <p class="text-gray-600 dark:text-gray-300 mb-6">
-          {kickoff.description}
-        </p>
-        <a href={kickoff.buttonUrl || '#'} class="no-underline inline-block bg-dtc-secondary text-white px-8 py-4 rounded-lg font-bold text-xl hover:bg-opacity-90 hover:shadow-lg transform hover:scale-105 transition-all duration-200 shadow-md">
-          {kickoff.buttonText}
-        </a>
       </div>
     </div>
   </section>
 
   <!-- Center Timeline -->
-  <section class="py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="surface-dtc-accent p-8 rounded-lg max-w-3xl mx-auto">
-        <h3 class="text-2xl font-bold mb-6">{timeline.title}</h3>
-        <div class="space-y-4">
-          {(timeline.events || []).map((event) => (
-            <div class="flex items-center gap-4">
-              <div class={`w-4 h-4 ${event.completed ? 'bg-white' : 'bg-yellow-300'} rounded-full flex-shrink-0`} aria-hidden="true"></div>
-              <div>
-                <div class="font-semibold"><span class="sr-only">{event.completed ? 'Completed: ' : 'Upcoming: '}</span>{event.date}</div>
-                <div class="text-sm">{event.description}</div>
+  <section class="py-16 sm:py-20" aria-labelledby="timeline-heading">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 id="timeline-heading" class="text-4xl font-bold font-roboto-condensed mb-4">
+          Center <span class="dtc-primary">Timeline</span>
+        </h2>
+        <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="relative" role="list" aria-label="Center milestones">
+        <!-- Vertical line -->
+        <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 -translate-x-1/2" aria-hidden="true"></div>
+
+        {(timeline.events || []).map((event, index) => {
+          const isRight = index % 2 === 1;
+          return (
+            <div class={`relative flex items-start mb-8 last:mb-0 ${isRight ? 'md:flex-row-reverse' : ''}`} role="listitem">
+
+              <!-- Node -->
+              <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-10" aria-hidden="true">
+                {event.completed ? (
+                  <div class="w-8 h-8 rounded-full flex items-center justify-center shadow-sm" style="background-color: #00B2A9;">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                ) : (
+                  <div class="w-8 h-8 rounded-full flex items-center justify-center shadow-md ring-4 ring-[#D86018]/20" style="background-color: #D86018;">
+                    <div class="w-3 h-3 rounded-full bg-white"></div>
+                  </div>
+                )}
               </div>
+
+              <!-- Content card -->
+              <div class={`ml-16 md:ml-0 md:w-[calc(50%-2rem)] ${isRight ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
+                <div class={`surface p-4 rounded-lg shadow-sm ${!event.completed ? 'ring-2 ring-[#D86018]/30' : ''}`}>
+                  <span class="sr-only">{event.completed ? 'Completed: ' : 'Upcoming: '}</span>
+                  <div class="font-bold text-sm text-[#2F65A7]">{event.date}</div>
+                  <div class="text-gray-700 text-sm mt-1">{event.description}</div>
+                </div>
+              </div>
+
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </div>
   </section>
 
   <!-- Research Focus Areas -->
-  <section class="max-w-6xl mx-auto px-4 py-16">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold font-roboto-condensed mb-4">
-        Research <span class="dtc-primary">Thrusts</span>
-      </h2>
-      <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
-    </div>
+  <section class="bg-gray-50 py-16 sm:py-20" aria-labelledby="research-heading">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 id="research-heading" class="text-4xl font-bold font-roboto-condensed mb-4">
+          Research <span class="dtc-primary">Thrusts</span>
+        </h2>
+        <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Three interconnected research areas driving digital twin innovation in manufacturing.
+        </p>
+      </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      {(researchThrusts.thrusts || []).map((thrust) => (
-        <div class="surface p-8 rounded-lg border-l-4 border-gray-400">
-          <h3 class="text-2xl font-bold mb-4">{thrust.title}</h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            {thrust.description}
-          </p>
-        </div>
-      ))}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {(researchThrusts.thrusts || []).map((thrust, index) => {
+          const color = thrustColors[index] || thrustColors[0];
+          return (
+            <div class={`surface rounded-xl p-8 border-t-4 ${color.border} shadow-sm hover:shadow-lg transition-shadow duration-300`}>
+              <div class={`w-12 h-12 rounded-lg ${color.iconBg} flex items-center justify-center mb-5`} aria-hidden="true">
+                {index === 0 && (
+                  <svg class={`w-6 h-6 ${color.iconText}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <rect x="3" y="3" width="8" height="8" rx="1"/>
+                    <rect x="13" y="13" width="8" height="8" rx="1"/>
+                    <path d="M11 7h2M7 11v2" stroke-dasharray="2 2"/>
+                  </svg>
+                )}
+                {index === 1 && (
+                  <svg class={`w-6 h-6 ${color.iconText}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                )}
+                {index === 2 && (
+                  <svg class={`w-6 h-6 ${color.iconText}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085"/>
+                  </svg>
+                )}
+              </div>
+              <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">
+                Thrust {index + 1}
+              </div>
+              <h3 class="text-xl font-bold font-roboto-condensed mb-3">{thrust.title}</h3>
+              <p class="text-gray-600 leading-relaxed">
+                {thrust.description}
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   </section>
 
   <!-- Industry Benefits -->
-  <section class="max-w-6xl mx-auto px-4 py-16">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold font-roboto-condensed mb-4">
-        Industry <span class="dtc-primary">Benefits</span>
-      </h2>
-      <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
-    </div>
+  <section class="py-16 sm:py-20" aria-labelledby="benefits-heading">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 id="benefits-heading" class="text-4xl font-bold font-roboto-condensed mb-4">
+          Industry <span class="dtc-primary">Benefits</span>
+        </h2>
+        <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
+      </div>
 
-    <div class="surface p-8 rounded-lg">
-      {(industryBenefits.paragraphs || []).map((paragraph, index, arr) => (
-        <p class={`text-lg leading-relaxed text-gray-700 dark:text-gray-300 ${index < arr.length - 1 ? 'mb-6' : ''}`}>
-          {paragraph}
-        </p>
-      ))}
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Main text content (2 columns) -->
+        <div class="lg:col-span-2 space-y-6">
+          {(industryBenefits.paragraphs || []).map((paragraph) => (
+            <p class="text-lg leading-relaxed text-gray-700">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+
+        <!-- Key benefits sidebar -->
+        <div class="surface-dtc-accent rounded-xl p-6">
+          <h3 class="text-lg font-bold mb-4 text-white">Key Advantages</h3>
+          <ul class="space-y-3" role="list">
+            {[
+              'Improved manufacturing throughput and quality',
+              'Faster, lower-cost ramp-up via virtual commissioning',
+              'Enhanced security and customer responsiveness',
+              'Workforce development and training environments',
+              'Pre-competitive collaboration forum',
+            ].map((benefit) => (
+              <li class="flex items-start gap-3 text-sm text-gray-100">
+                <svg class="w-5 h-5 text-maize flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                {benefit}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Greater Context -->
-  <section class="bg-gray-50 dark:bg-gray-800 py-16">
+  <section class="bg-gray-50 py-16 sm:py-20" aria-labelledby="context-heading">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold font-roboto-condensed mb-4">
+        <h2 id="context-heading" class="text-4xl font-bold font-roboto-condensed mb-4">
           Greater <span class="dtc-primary">Context</span>
         </h2>
         <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
       </div>
 
-      <div class="space-y-8">
-        <div class="surface p-8 rounded-lg">
-          {(greaterContext.paragraphs || []).map((paragraph, index, arr) => (
-            <p class={`text-lg leading-relaxed text-gray-700 dark:text-gray-300 ${index < arr.length - 1 ? 'mb-6' : ''}`}>
-              {paragraph}
+      <!-- Lead paragraph -->
+      <div class="max-w-3xl mx-auto mb-10">
+        <p class="text-xl leading-relaxed text-gray-700">
+          {greaterContext.lead}
+        </p>
+      </div>
+
+      <!-- Supporting cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {(greaterContext.cards || []).map((card) => (
+          <div class="surface rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-bold font-roboto-condensed mb-3 text-[#2F65A7]">{card.heading}</h3>
+            <p class="text-base leading-relaxed text-gray-700">
+              {card.text}
             </p>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- IUCRC Explanation -->
-  <section class="max-w-6xl mx-auto px-4 py-16">
-    <div class="surface p-8 rounded-lg border border-gray-200 dark:border-gray-700">
-      <h2 class="text-3xl font-bold font-roboto-condensed mb-6 text-center text-gray-800 dark:text-gray-200">
-        What is an <span class="dtc-primary">IUCRC</span>?
-      </h2>
-      <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-        {iucrc.content}
-      </p>
+  <section class="py-16 sm:py-20" aria-labelledby="iucrc-heading">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="relative bg-umichblue rounded-2xl p-8 sm:p-12 text-white overflow-hidden">
+        <!-- Subtle pattern overlay -->
+        <div class="absolute inset-0 opacity-5" aria-hidden="true">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+            <defs>
+              <pattern id="iucrcGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="20" x2="40" y2="20" stroke="#ffffff" stroke-opacity="0.3" stroke-width="0.5"/>
+                <line x1="20" y1="0" x2="20" y2="40" stroke="#ffffff" stroke-opacity="0.3" stroke-width="0.5"/>
+                <circle cx="20" cy="20" r="1" fill="#ffffff" fill-opacity="0.3"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#iucrcGrid)"/>
+          </svg>
+        </div>
+
+        <div class="relative z-10">
+          <h2 id="iucrc-heading" class="text-3xl font-bold font-roboto-condensed mb-6">
+            What is an <span class="text-maize">IUCRC</span>?
+          </h2>
+          <p class="text-lg leading-relaxed text-gray-200 max-w-3xl">
+            {iucrc.content}
+          </p>
+          <a href="https://iucrc.nsf.gov/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="no-underline inline-flex items-center gap-2 mt-6 text-maize font-medium hover:text-white transition-colors">
+            Learn more about the IUCRC program
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+            <span class="sr-only"> (opens in new tab)</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 

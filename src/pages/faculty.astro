@@ -27,14 +27,14 @@ function getUniBgColor(shortName: string): string {
         Our <span class="dtc-primary">Faculty</span>
       </h1>
       <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
-      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+      <p class="text-xl text-gray-600 max-w-4xl mx-auto">
         World-class researchers from leading universities driving innovation in digital twin technologies for manufacturing.
       </p>
     </div>
   </section>
 
   <!-- Center Leadership -->
-  <section class="bg-gray-50 dark:bg-gray-800 py-16">
+  <section class="bg-gray-50 py-16">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold font-roboto-condensed text-center mb-12">
         Center <span class="dtc-primary">Leadership</span>
@@ -49,7 +49,7 @@ function getUniBgColor(shortName: string): string {
               </div>
               <div>
                 <h3 class="text-2xl font-bold dtc-primary">{university.name}</h3>
-                <p class="text-gray-600 dark:text-gray-300">{university.location}</p>
+                <p class="text-gray-600">{university.location}</p>
               </div>
             </div>
 
@@ -73,10 +73,10 @@ function getUniBgColor(shortName: string): string {
                     </div>
                     <div>
                       <h4 class="text-xl font-bold mb-2">{leader.name}</h4>
-                      <p class="text-gray-600 dark:text-gray-300 mb-2">{leader.title}</p>
+                      <p class="text-gray-600 mb-2">{leader.title}</p>
                     </div>
                   </div>
-                  <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                  <p class="text-sm text-gray-500 mb-2">
                     {leader.description}
                   </p>
                   {leader.email && <a href={`mailto:${leader.email}`} class="text-dtc-primary hover:underline text-sm">
@@ -101,8 +101,8 @@ function getUniBgColor(shortName: string): string {
       {(researchFacultyData.faculty || []).map((person) => (
         <div class="card-base surface p-6">
           <h3 class="text-xl font-bold text-center mb-2">{person.name}</h3>
-          <p class="text-center text-gray-600 dark:text-gray-300 mb-3">{person.university}</p>
-          <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-4">
+          <p class="text-center text-gray-600 mb-3">{person.university}</p>
+          <p class="text-sm text-gray-500 text-center mb-4">
             Research focus: {person.researchFocus}
           </p>
           {person.website && <div class="text-center">
@@ -115,12 +115,12 @@ function getUniBgColor(shortName: string): string {
     </div>
 
     <!-- Contact Information -->
-    <div class="mt-16 text-center surface-dtc-primary p-8 rounded-lg">
+    <div class="mt-16 text-center border-2 border-[#D86018] p-8 rounded-lg">
       <h2 class="text-2xl font-bold mb-4">Join Our Research Community</h2>
-      <p class="text-lg mb-6">
+      <p class="text-lg text-gray-600 mb-6">
         Interested in collaborating with our faculty or learning more about our research?
       </p>
-      <a href="mailto:cdtm-iucrc@umich.edu" class="inline-block bg-white text-dtc-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+      <a href="mailto:cdtm-iucrc@umich.edu" class="inline-block bg-[#D86018] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#c45515] transition-colors">
         Contact Us
       </a>
     </div>

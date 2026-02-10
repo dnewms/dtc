@@ -8,8 +8,8 @@
   /* Colors - DTC Variant (orange/teal focus) */
   --color-maize: #ffcb05;
   --color-umichblue: #00274c;
-  --color-dtc-orange: #575294; /* rossOrange as primary */
-  --color-dtc-teal: #D86018; /* taubmanTeal as secondary */
+  --color-dtc-orange: #D86018; /* rossOrange as primary */
+  --color-dtc-teal: #00B2A9; /* taubmanTeal as secondary */
   --color-dtc-blue: #2F65A7; /* arboretumBlue as accent */
   --color-tappanRed: #9A3324;
   --color-rossOrange: #D86018;
@@ -55,22 +55,14 @@
   --z-100: 100;
 
   /* Focus Styles */
-  --focus-ring-color-light: var(--color-dtc-primary);
-  --focus-ring-color-dark: #eeeeee;
+  --focus-ring-color: var(--color-dtc-primary);
 
-  /* Surface Colors - Light Mode */
-  --bg-page-light: #f3f4f6;
-  --bg-surface-light: #f8f9fa;
+  /* Surface Colors */
+  --bg-page: #f3f4f6;
+  --bg-surface: #f8f9fa;
   --bg-surface-hover: #e5e7eb;
-  --bg-elevated-light: #ffffff;
-  --bg-undersurface-light: #ebeef2;
-  
-  /* Surface Colors - Dark Mode */
-  --bg-page-dark: #00142c;
-  --bg-surface-dark: var(--color-umichblue);
-  --bg-surface-hover-dark: #1a3a5f;
-  --bg-elevated-dark: var(--color-dtc-blue);
-  --bg-undersurface-dark: #000e22;
+  --bg-elevated: #ffffff;
+  --bg-undersurface: #ebeef2;
 }
 
 @layer base {
@@ -88,6 +80,13 @@
     opacity: 1;
     transition: opacity;
     font-display: swap;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
   
   header {
@@ -126,15 +125,19 @@
   
   /* Global focus styles for keyboard navigation */
   :focus-visible {
-    outline: 2px solid var(--focus-ring-color-light);
+    outline: 2px solid var(--focus-ring-color);
     outline-offset: 2px;
   }
-  
-  /* Dark mode focus styles */
-  @media (prefers-color-scheme: dark) {
-    :focus-visible {
-      outline: 2px solid var(--focus-ring-color-dark);
-      outline-offset: 2px;
+
+  /* High contrast mode support */
+  @media (forced-colors: active) {
+    .bg-dtc-primary,
+    .bg-dtc-secondary,
+    .bg-dtc-accent,
+    .surface-dtc-primary,
+    .surface-dtc-secondary,
+    .surface-dtc-accent {
+      border: 2px solid ButtonText;
     }
   }
 
@@ -155,7 +158,7 @@
 @layer utilities {  
   /* Define a single page-bg class that uses CSS variables */
   .page-bg {
-    @apply bg-[var(--bg-page-light)] text-gray-800 dark:bg-[var(--bg-page-dark)] dark:text-neutral-100;
+    @apply bg-[var(--bg-page)] text-gray-800;
   }
 
   /* DTC-specific utilities */
@@ -192,21 +195,17 @@
     @apply shadow-md rounded-md p-6
   }
 
-  .surface-border {
-    @apply dark:border dark:border-arboretumBlue/50
-  }
-
   /* Surfaces */
   .surface {
-    @apply bg-[var(--bg-surface-light)] dark:bg-[var(--bg-surface-dark)] text-gray-700 dark:text-neutral-100;
+    @apply bg-[var(--bg-surface)] text-gray-700;
   }
 
   .elevated {
-    @apply bg-[var(--bg-elevated-light)] dark:bg-[var(--bg-elevated-dark)];
+    @apply bg-[var(--bg-elevated)];
   }
 
   .undersurface {
-    @apply bg-[var(--bg-undersurface-light)] dark:bg-[var(--bg-undersurface-dark)];
+    @apply bg-[var(--bg-undersurface)];
   }
 
   /* DTC Surface Variants */
@@ -234,7 +233,7 @@
   
   /* Search bars */
   .search-bar {
-    @apply w-full p-2 border bg-[var(--bg-page-light)] dark:bg-[var(--bg-page-dark)] border-neutral-400 dark:border-arboretumBlue rounded-md placeholder:text-neutral-500 dark:text-neutral-100 dark:placeholder:text-neutral-400
+    @apply w-full p-2 border bg-[var(--bg-page)] border-neutral-400 rounded-md placeholder:text-neutral-500
   }
 
   /* Section title styling */
@@ -307,6 +306,35 @@
     text-decoration-thickness: 1px !important;
     text-underline-offset: 2px !important;
     text-decoration-color: var(--color-dtc-secondary) !important;
+  }
+
+  /* Hero entrance animation */
+  .hero-animate {
+    animation: heroFadeUp 0.6s ease-out both;
+  }
+
+  @keyframes heroFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-animate {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+
+    .card-hover {
+      transform: none !important;
+    }
   }
 }
 

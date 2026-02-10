@@ -14,7 +14,7 @@ const categories = researchProjects.categories || [];
         Current <span class="dtc-primary">Research Projects</span>
       </h1>
       <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
-      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+      <p class="text-xl text-gray-600 max-w-4xl mx-auto">
         Research projects across the Center for Digital Twins in Manufacturing, organized by thrust area.
       </p>
     </div>
@@ -22,25 +22,25 @@ const categories = researchProjects.categories || [];
 
   <!-- Research Projects by Category -->
   {categories.map((category, i) => (
-    <section class={`${i % 2 === 0 ? 'bg-gray-50 dark:bg-gray-800' : ''} py-12`}>
+    <section class={`${i % 2 === 0 ? 'bg-gray-50' : ''} py-12`}>
       <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-2xl font-bold font-roboto-condensed mb-6">
-          <span class="dtc-primary">{category.title}</span>
+          {category.title}
         </h2>
-        <ul class="surface rounded-lg divide-y divide-gray-200 dark:divide-gray-700">
+        <ul class="surface rounded-lg divide-y divide-gray-200">
           {category.projects.map((project) => (
             <li class="px-6 py-4">
               <div class="flex items-baseline gap-3">
-                <span class="text-sm font-mono text-dtc-primary font-semibold whitespace-nowrap">{project.id}</span>
+                <span class="text-sm font-mono text-[#2F65A7] font-semibold whitespace-nowrap">{project.id}</span>
                 <div>
                   {project.link ? (
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" class="font-semibold text-dtc-primary hover:underline">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" class="font-semibold text-[#2F65A7] hover:underline">
                       {project.title}<span class="sr-only"> (opens in new tab)</span>
                     </a>
                   ) : (
                     <span class="font-semibold">{project.title}</span>
                   )}
-                  <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{project.description}</p>
+                  <p class="text-sm text-gray-600 mt-1">{project.description}</p>
                 </div>
               </div>
             </li>
@@ -52,12 +52,12 @@ const categories = researchProjects.categories || [];
 
   <!-- Contact Section -->
   <section class="max-w-6xl mx-auto px-4 py-16">
-    <div class="text-center surface-dtc-primary p-8 rounded-lg">
+    <div class="text-center border-2 border-[#D86018] p-8 rounded-lg">
       <h2 class="text-2xl font-bold mb-4">Interested in Our Research?</h2>
-      <p class="text-lg mb-6">
+      <p class="text-lg text-gray-600 mb-6">
         Learn more about how to get involved with our research projects or propose new topics.
       </p>
-      <a href="mailto:cdtm-iucrc@umich.edu" class="inline-block bg-white text-dtc-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+      <a href="mailto:cdtm-iucrc@umich.edu" class="inline-block bg-[#D86018] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#c45515] transition-colors">
         Contact Us
       </a>
     </div>

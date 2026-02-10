@@ -4,27 +4,6 @@ import publicationsData from '../content/resources/publications.json';
 import projectResourcesData from '../content/resources/project-resources.json';
 import documentsData from '../content/resources/documents.json';
 
-// Helper function to get icon emoji based on icon name
-function getIcon(iconName: string): string {
-  const icons: Record<string, string> = {
-    'clipboard': '📋',
-    'chart': '📊',
-    'target': '🎯',
-    'rocket': '🚀'
-  };
-  return icons[iconName] || '📄';
-}
-
-// Helper function to get background color class
-function getBgColor(colorClass: string): string {
-  const colors: Record<string, string> = {
-    'dtc-primary': 'bg-dtc-primary',
-    'dtc-secondary': 'bg-dtc-secondary',
-    'dtc-accent': 'bg-dtc-accent',
-    'gray-600': 'bg-gray-600'
-  };
-  return colors[colorClass] || 'bg-gray-600';
-}
 ---
 
 <MainLayout title="Resources - Digital Twin Center">
@@ -70,34 +49,28 @@ function getBgColor(colorClass: string): string {
   </section>
 
 
-  <!-- Tools & Software Section -->
+  <!-- Project Resources Section -->
   <section id="tools" class="py-16">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold font-roboto-condensed mb-8">
         <span class="dtc-primary">Project</span> Resources
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <ul class="surface rounded-lg divide-y divide-gray-200 dark:divide-gray-700">
         {(projectResourcesData.resources || []).map((resource) => (
-          <div class="surface p-6 rounded-lg">
-            <div class="flex items-center gap-4 mb-4">
-              <div class={`w-12 h-12 ${getBgColor(resource.color)} rounded-lg flex items-center justify-center`}>
-                <span class="text-white font-bold" aria-hidden="true">{getIcon(resource.icon)}</span>
-              </div>
-              <div>
-                <h3 class="text-xl font-bold">{resource.title}</h3>
-                <p class="text-sm text-gray-500">{resource.subtitle}</p>
-              </div>
+          <li class="px-6 py-4 flex items-center justify-between">
+            <div>
+              <span class="font-semibold">{resource.title}</span>
+              <span class="text-sm text-gray-500 dark:text-gray-400 ml-2">{resource.subtitle}</span>
             </div>
-            <p class="text-gray-600 dark:text-gray-300 mb-4">
-              {resource.description}
-            </p>
-            <div class="flex gap-4">
-              {resource.url && <a href={resource.url} target="_blank" rel="noopener noreferrer" class="text-dtc-primary hover:underline">{resource.linkText || 'View'}<span class="sr-only"> (opens in new tab)</span></a>}
-            </div>
-          </div>
+            {resource.url && resource.url !== '#' && (
+              <a href={resource.url} target="_blank" rel="noopener noreferrer" class="text-dtc-primary hover:underline text-sm whitespace-nowrap ml-4">
+                {resource.linkText || 'View'}<span class="sr-only"> (opens in new tab)</span>
+              </a>
+            )}
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   </section>
 

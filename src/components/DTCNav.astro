@@ -2,7 +2,8 @@
 
 const menuItems = [
   { label: "Home", uri: "/dtc/" },
-  { label: "Faculty Researchers", uri: "/dtc/faculty" },
+  { label: "Faculty", uri: "/dtc/faculty" },
+  { label: "Research", uri: "/dtc/research" },
   { label: "Resources", uri: "/dtc/resources" }
 ];
 
@@ -21,9 +22,7 @@ const isActive = (itemPath: string) => {
   <div class="ml-2 self-end md:ml-0">
     <a href="/dtc/" class="block no-underline" aria-label="Home - Digital Twin Center">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 bg-dtc-primary rounded-full flex items-center justify-center">
-          <span class="text-white font-bold text-sm">DTC</span>
-        </div>
+        <img src="/dtc/images/dtc-logo.png" alt="DTC Logo" class="w-8 h-8 object-contain" />
         <div>
           <div class="font-roboto-condensed font-bold text-lg dtc-primary">Center for Digital Twins in Manufacturing</div>
           <div class="text-xs text-gray-600 dark:text-gray-300">IUCRC</div>

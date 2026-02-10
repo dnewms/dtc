@@ -1,10 +1,18 @@
 ---
-import FileCard from '../components/FileCard.astro';
-import { researchFiles } from '../data/researchFiles.js';
+import MainLayout from '../../layouts/MainLayout.astro';
+import researchFiles from '../../data/researchFiles.json';
 ---
 
-<main>
-  {researchFiles.map(file => (
-    <FileCard {...file} />
-  ))}
-</main>
+<MainLayout title="Research Projects - Digital Twin Center">
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold font-roboto-condensed mb-8">Research Projects</h1>
+    <ul class="surface rounded-lg divide-y divide-gray-200 dark:divide-gray-700">
+      {researchFiles.map((file) => (
+        <li class="px-6 py-4">
+          <a href={file.link} class="font-semibold text-dtc-primary hover:underline">{file.title}</a>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{file.description}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+</MainLayout>

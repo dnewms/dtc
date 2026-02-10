@@ -1,1 +1,12 @@
-[\n  {\n    \"title\": \"Membership A\",\n    \"description\": \"Description for Membership A\",\n    \"link\": \"https://example.com/membershipA\"\n  },\n  {\n    \"title\": \"Membership B\",\n    \"description\": \"Description for Membership B\",\n    \"link\": \"https://example.com/membershipB\"\n  }\n]
+[
+  {
+    "title": "Membership A",
+    "description": "Description for Membership A",
+    "link": "https://example.com/membershipA"
+  },
+  {
+    "title": "Membership B",
+    "description": "Description for Membership B",
+    "link": "https://example.com/membershipB"
+  }
+]

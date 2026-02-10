@@ -2,17 +2,37 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import DTCHero from '../components/DTCHero.astro';
 import homepage from '../content/site/homepage.json';
+import updatesData from '../content/updates/updates.json';
 
-const kickoff = homepage.kickoff || {};
-const timeline = homepage.timeline || {};
-const researchThrusts = homepage.researchThrusts || {};
-const industryBenefits = homepage.industryBenefits || {};
-const greaterContext = homepage.greaterContext || {};
-const iucrc = homepage.iucrc || {};
+const { kickoff, timeline, researchThrusts, industryBenefits, greaterContext, iucrc } = homepage;
+const updates = updatesData.updates;
 ---
 
 <MainLayout title="NSF Center for Digital Twins in Manufacturing">
   <DTCHero />
+
+  <!-- Updates -->
+  {updates.length > 0 && (
+    <section class="max-w-6xl mx-auto px-4 py-8">
+      <h2 class="text-2xl font-bold font-roboto-condensed mb-4">Latest Updates</h2>
+      <div class="divide-y divide-gray-200 dark:divide-gray-700 surface rounded-lg">
+        {updates.map((update) => (
+          <div class="flex items-center gap-4 px-6 py-4">
+            <span class={`text-xs font-semibold uppercase px-2 py-1 rounded ${update.type === 'center' ? 'bg-dtc-primary text-white' : 'bg-dtc-secondary text-white'}`}>
+              {update.type === 'center' ? 'Center Update' : 'News Mention'}
+            </span>
+            {update.link ? (
+              <a href={update.link} class="text-gray-800 dark:text-gray-200 hover:dtc-primary transition-colors">
+                {update.heading}
+              </a>
+            ) : (
+              <span class="text-gray-800 dark:text-gray-200">{update.heading}</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
 
   <!-- Center Overview -->
   <section class="max-w-6xl mx-auto px-4 py-16">
@@ -24,39 +44,42 @@ const iucrc = homepage.iucrc || {};
     </div>
   </section>
 
-  <!-- Center Timeline & Kickoff -->
+  <!-- Center Kick-off -->
   <section class="bg-gray-50 dark:bg-gray-800 py-16">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl font-bold font-roboto-condensed mb-6">
-            Center <span class="dtc-primary">Kick-off Meeting</span>
-          </h2>
-          <div class="bg-dtc-primary text-white p-6 rounded-lg mb-6">
-            <div class="text-2xl font-bold mb-2">{kickoff.date}</div>
-            <div class="text-lg">{kickoff.dateSubtitle}</div>
-          </div>
-          <p class="text-gray-600 dark:text-gray-300 mb-6">
-            {kickoff.description}
-          </p>
-          <a href={kickoff.buttonUrl || '#'} class="inline-block bg-dtc-secondary text-white px-8 py-4 rounded-lg font-bold text-xl hover:bg-opacity-90 hover:shadow-lg transform hover:scale-105 transition-all duration-200 shadow-md">
-            {kickoff.buttonText}
-          </a>
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold font-roboto-condensed mb-6">
+          Center <span class="dtc-primary">Kick-off Meeting</span>
+        </h2>
+        <div class="bg-dtc-primary text-white p-6 rounded-lg mb-6">
+          <div class="text-2xl font-bold mb-2">{kickoff.date}</div>
+          <div class="text-lg">{kickoff.dateSubtitle}</div>
         </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          {kickoff.description}
+        </p>
+        <a href={kickoff.buttonUrl || '#'} class="inline-block bg-dtc-secondary text-white px-8 py-4 rounded-lg font-bold text-xl hover:bg-opacity-90 hover:shadow-lg transform hover:scale-105 transition-all duration-200 shadow-md">
+          {kickoff.buttonText}
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <div class="surface-dtc-accent p-8 rounded-lg">
-          <h3 class="text-2xl font-bold mb-6">{timeline.title}</h3>
-          <div class="space-y-4">
-            {(timeline.events || []).map((event) => (
-              <div class="flex items-center gap-4">
-                <div class={`w-4 h-4 ${event.completed ? 'bg-white' : 'bg-yellow-300'} rounded-full flex-shrink-0`} aria-hidden="true"></div>
-                <div>
-                  <div class="font-semibold"><span class="sr-only">{event.completed ? 'Completed: ' : 'Upcoming: '}</span>{event.date}</div>
-                  <div class="text-sm">{event.description}</div>
-                </div>
+  <!-- Center Timeline -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="surface-dtc-accent p-8 rounded-lg max-w-3xl mx-auto">
+        <h3 class="text-2xl font-bold mb-6">{timeline.title}</h3>
+        <div class="space-y-4">
+          {(timeline.events || []).map((event) => (
+            <div class="flex items-center gap-4">
+              <div class={`w-4 h-4 ${event.completed ? 'bg-white' : 'bg-yellow-300'} rounded-full flex-shrink-0`} aria-hidden="true"></div>
+              <div>
+                <div class="font-semibold"><span class="sr-only">{event.completed ? 'Completed: ' : 'Upcoming: '}</span>{event.date}</div>
+                <div class="text-sm">{event.description}</div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

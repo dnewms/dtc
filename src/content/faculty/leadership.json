@@ -11,7 +11,7 @@
           "title": "Ronald D. and Regina C. McNeil Department Chair of Robotics",
           "description": "Leading digital twin research initiatives and industry partnerships",
           "email": "tilbury@umich.edu",
-          "image": "/images/leadership/Tilbury.jpg",
+          "image": "/dtc/images/leadership/Tilbury.jpg",
           "role": "primary"
         },
         {
@@ -19,7 +19,7 @@
           "title": "Professor, Robotics and Mechanical Engineering",
           "description": "Specializing in manufacturing systems and IoT integration",
           "email": "bartonkl@umich.edu",
-          "image": "/images/leadership/Barton.jpg",
+          "image": "/dtc/images/leadership/Barton.jpg",
           "role": "secondary"
         },
         {
@@ -27,7 +27,7 @@
           "title": "Research Scientist",
           "description": "Advanced manufacturing systems and digital twin technologies",
           "email": "moyne@umich.edu",
-          "image": "/images/leadership/moyne.jpg",
+          "image": "/dtc/images/leadership/moyne.jpg",
           "role": "other"
         }
       ]
@@ -43,7 +43,7 @@
           "title": "Director and Professor, School of Manufacturing Systems and Network",
           "description": "Advanced manufacturing and digital transformation expert",
           "email": "Binil.Starly@asu.edu",
-          "image": "/images/leadership/starly.png",
+          "image": "/dtc/images/leadership/starly.png",
           "role": "primary"
         },
         {
@@ -51,7 +51,7 @@
           "title": "Assistant Professor, Mechanical Engineering",
           "description": "Robotics and intelligent manufacturing systems",
           "email": "Wenlong.Zhang@asu.edu",
-          "image": "/images/leadership/zhang.jpg",
+          "image": "/dtc/images/leadership/zhang.jpg",
           "role": "secondary"
         },
         {
@@ -59,7 +59,7 @@
           "title": "Associate Professor, School of Computing and Augmented Intelligence",
           "description": "Data analytics and machine learning applications",
           "email": "Giulia.Pedrielli@asu.edu",
-          "image": "/images/leadership/pedrielli.png",
+          "image": "/dtc/images/leadership/pedrielli.png",
           "role": "other"
         }
       ]

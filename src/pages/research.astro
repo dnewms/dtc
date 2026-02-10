@@ -1,0 +1,60 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import researchProjects from '../content/research/research-projects.json';
+
+const categories = researchProjects.categories || [];
+---
+
+<MainLayout title="Research - Digital Twin Center">
+
+  <!-- Header -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold font-roboto-condensed mb-4">
+        Current <span class="dtc-primary">Research Projects</span>
+      </h1>
+      <div class="subtitle-double-line-dtc mx-auto mb-6" aria-hidden="true"></div>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+        Research projects across the Center for Digital Twins in Manufacturing, organized by thrust area.
+      </p>
+    </div>
+  </section>
+
+  <!-- Research Projects by Category -->
+  {categories.map((category, i) => (
+    <section class={`${i % 2 === 0 ? 'bg-gray-50 dark:bg-gray-800' : ''} py-12`}>
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-bold font-roboto-condensed mb-6">
+          <span class="dtc-primary">{category.title}</span>
+        </h2>
+        <ul class="surface rounded-lg divide-y divide-gray-200 dark:divide-gray-700">
+          {category.projects.map((project) => (
+            <li class="px-6 py-4">
+              <div class="flex items-baseline gap-3">
+                <span class="text-sm font-mono text-dtc-primary font-semibold whitespace-nowrap">{project.id}</span>
+                <div>
+                  <span class="font-semibold">{project.title}</span>
+                  <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{project.description}</p>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  ))}
+
+  <!-- Contact Section -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="text-center surface-dtc-primary p-8 rounded-lg">
+      <h2 class="text-2xl font-bold mb-4">Interested in Our Research?</h2>
+      <p class="text-lg mb-6">
+        Learn more about how to get involved with our research projects or propose new topics.
+      </p>
+      <a href="mailto:cdtm-iucrc@umich.edu" class="inline-block bg-white text-dtc-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+</MainLayout>

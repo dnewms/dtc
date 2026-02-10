@@ -1,0 +1,59 @@
+{
+  "categories": [
+    {
+      "title": "DT Fundamentals",
+      "projects": [
+        {
+          "id": "1.1",
+          "title": "Definition of Digital Twin (DT) and DT Framework",
+          "description": "Establishes foundational concepts and structural approaches for digital twins."
+        },
+        {
+          "id": "1.2",
+          "title": "Quantifying and Reducing Uncertainty in Digital Twins",
+          "description": "Focuses on uncertainty quantification methodologies within DT systems."
+        }
+      ]
+    },
+    {
+      "title": "Manufacturing Applications",
+      "projects": [
+        {
+          "id": "2.1",
+          "title": "Reduce Time & Cost in Commissioning & Reconfiguration",
+          "description": "Addresses virtual commissioning to streamline manufacturing setup and adaptation."
+        },
+        {
+          "id": "2.2",
+          "title": "Digital Twins for Human-Robot Collaboration",
+          "description": "Explores DT applications in collaborative manufacturing environments with robotic systems."
+        },
+        {
+          "id": "2.3",
+          "title": "Aggregation of Digital Twins to Improve KPIs",
+          "description": "Investigates how multiple DTs can be integrated to enhance key performance indicators."
+        }
+      ]
+    },
+    {
+      "title": "Workforce & Development Tools",
+      "projects": [
+        {
+          "id": "3.1",
+          "title": "Digital Twins Workforce Enabling Tools",
+          "description": "Develops solutions to support worker capabilities through digital twin technology."
+        },
+        {
+          "id": "3.2",
+          "title": "Digital Twin Developer, User & Training Environment",
+          "description": "Creates platforms for DT development, operation, and skill development."
+        },
+        {
+          "id": "3.3",
+          "title": "AutoTwin: Self-generating Self-executing DT Models",
+          "description": "Develops autonomous digital twin systems that can generate and execute themselves."
+        }
+      ]
+    }
+  ]
+}

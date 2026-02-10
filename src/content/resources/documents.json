@@ -1,28 +1,28 @@
 {
   "documents": [
     {
-      "title": "CDTM - IUCRC Bylaws",
-      "description": "Bylaws document outlining the governance structure and operational procedures for the Center for Digital Twins in Manufacturing IUCRC.",
-      "url": "https://drive.google.com/file/d/17FKYdokV21MBcYl0Ck8IschYkPDTVNah/view",
-      "linkText": "Download PDF"
-    },
-    {
-      "title": "CDTM - Procedures Manual",
-      "description": "Procedures manual providing detailed procedures and guidelines for center operations and research activities.",
-      "url": "https://drive.google.com/file/d/1j9uJnXgl2NpTfdD95it0MJo1M9XFgVI-/view",
-      "linkText": "Download PDF"
-    },
-    {
       "title": "Digital Twins and AI in Semiconductor Manufacturing",
       "description": "Comprehensive report on the applications of digital twin technologies and artificial intelligence in semiconductor manufacturing processes.",
-      "url": "#",
+      "url": "https://drive.google.com/file/d/1tqKgnsZqQmBES2Q7GqNGKWSgr8csI7w9/view",
       "linkText": "Download Document"
     },
     {
-      "title": "NIST-AI Roadmap - Semiconductor",
-      "description": "NIST artificial intelligence roadmap specifically focused on semiconductor manufacturing applications and standards.",
-      "url": "#",
+      "title": "Artificial Intelligence to Advance High-Mix Production: A Roadmap for the Semiconductor Industry",
+      "description": "Roadmap outlining how artificial intelligence can advance high-mix production in the semiconductor industry.",
+      "url": "https://drive.google.com/file/d/1Zw6MAmvhN2ZN89ozGvOWtXbk7x5PzSrq/view",
       "linkText": "Download PDF"
+    },
+    {
+      "title": "Digital Twin Framework Keynote",
+      "description": "Keynote presentation covering the digital twin framework development and implementation strategies.",
+      "url": "https://drive.google.com/file/d/1guNM24gGLLP6VcsoprbHA440UWx8Jnwe/view",
+      "linkText": "Download Slides"
+    },
+    {
+      "title": "Advanced Process Control - Smart Manufacturing",
+      "description": "Presentation on advanced process control in smart manufacturing (October 2024).",
+      "url": "https://drive.google.com/file/d/1AIyOR2pZk1sjLV_UiTD-uN9kNGhDy0VM/view",
+      "linkText": "View Presentation"
     }
   ]
 }

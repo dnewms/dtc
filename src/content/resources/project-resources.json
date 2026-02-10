@@ -19,11 +19,29 @@
       "color": "dtc-secondary"
     },
     {
-      "title": "Digital Twin Framework Keynote",
-      "subtitle": "Presentation materials",
-      "description": "Keynote presentation covering the digital twin framework development and implementation strategies.",
-      "url": "https://drive.google.com/file/d/1guNM24gGLLP6VcsoprbHA440UWx8Jnwe/view",
-      "linkText": "Download Slides",
+      "title": "CDTM - IUCRC Bylaws",
+      "subtitle": "Governance document",
+      "description": "Bylaws document outlining the governance structure and operational procedures for the Center for Digital Twins in Manufacturing IUCRC.",
+      "url": "https://drive.google.com/file/d/17FKYdokV21MBcYl0Ck8IschYkPDTVNah/view",
+      "linkText": "View Document",
+      "icon": "clipboard",
+      "color": "dtc-primary"
+    },
+    {
+      "title": "CDTM - Procedures Manual",
+      "subtitle": "Operations guidelines",
+      "description": "Procedures manual providing detailed procedures and guidelines for center operations and research activities.",
+      "url": "https://drive.google.com/file/d/1j9uJnXgl2NpTfdD95it0MJo1M9XFgVI-/view",
+      "linkText": "View Document",
+      "icon": "clipboard",
+      "color": "dtc-primary"
+    },
+    {
+      "title": "CDTM Overview Deck",
+      "subtitle": "Center overview presentation",
+      "description": "Overview presentation for the Center for Digital Twins in Manufacturing.",
+      "url": "https://drive.google.com/file/d/1E_epQR7gu4qIlRbyJ5imPWUpMo8GpDwk/view",
+      "linkText": "View Slides",
       "icon": "target",
       "color": "dtc-accent"
     }
